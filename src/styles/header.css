@@ -2,16 +2,18 @@
   .desktopHeader{
     display: none;
   }
-  .desktopHeader{
-    width: 100%;
-  }
+  
   #languageHeaderMobile{
     margin-top: 15%;
     margin-right: 5%;
   }
+  #languageHeaderMobile img{
+    width: 30px;
+     margin-left: 5px;
+  }
   .menuHeader{
     width: 100%;
-    margin-top: 16%;
+    margin-top: 18%;
   }
   .menuHeader p{
     padding-left: 10%;
@@ -29,5 +31,9 @@
    }
    #languageHeaderMobile{
      display: none;
+   }
+   .desktopHeader img{
+     width: 30px;
+     margin-left: 5px;
    }
 }
