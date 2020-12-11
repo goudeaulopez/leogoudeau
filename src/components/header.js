@@ -12,7 +12,7 @@ class Header extends React.Component{
         return(
             <div>
                 <div className="desktopHeader navbar fixed-top navbar-light bg-light mb-0">
-                <a className="title navbar-brand pt-2 pl-2">Leo Goudeau</a>
+                <a className="title navbar-brand pt-2 pl-2">MyResume</a>
                      <ul className="navbar-nav mr-auto d-flex flex-row ml-3">
                          <li className="nav-item ml-4">
                              <a onClick={()=>this.props.selectMenuBar('')} className="nav-link pt-2">{mainPage}</a>
