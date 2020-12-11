@@ -1,41 +1,66 @@
 import React from 'react'
+import '../styles/mainPage.css'
 
 const MainPage = props => {
 
     const mainPage = props.language === 'english' ? <Main/> : <Inicio/>
 
     return(
-        <div style={{textAlign:'center'}}>
-            {mainPage}
-        </div>
+       <div>
+            <div className="mainDesktop">
+              {mainPage}
+            </div>
+            <div className="mainMobile">
+              {mainPage}
+            </div>
+       </div>
     )
 }
 export default MainPage
 
 const Inicio = () => {
     return(
-        <div>
-          Inicio
-       </div>
+        <div className="ui segment" >
+        <img  className="ui small left rounded floated image m-3" src="/1265060_673310719365614_1302370417_o.jpg"/>
+       <p className="pt-2">
+       Solamente en espanol sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+       ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <p>
+       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+       ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <p>
+       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+       ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <p>
+       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+       ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. </p>
+    </div>
     )
 }
 const Main = () => {
     return(
-        <div>
-           <p>
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-           </p>
+        <div className="ui segment" >
+            <img  className="ui small left rounded floated image m-3" src="/1265060_673310719365614_1302370417_o.jpg"/>
+           <p className="pt-2">
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+           ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p>
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+           ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p>
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+           ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <p>
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+           ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat. </p>
         </div>
     )
 }

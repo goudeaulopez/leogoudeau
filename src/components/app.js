@@ -40,7 +40,7 @@ class App extends React.Component{
                         changeLanguage={this.changeLanguage}
                         selectMenuBar={this.selectMenuBar} 
                     />
-                    <br/><br/><br/>
+                    
                     {this.menuNavigation()}
                 </div>
 

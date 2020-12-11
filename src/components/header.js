@@ -37,7 +37,7 @@ class Header extends React.Component{
                      
                 </div>
                 <div className="mobileHeader navbar fixed-top navbar-light bg-light justify-content-between">
-                   <a className="title navbar-brand pt-2 pl-2">Leo Goudeau</a>
+                   <a className="title navbar-brand pt-2 pl-2">MyResume</a>
                   <div>
                    <a onClick={()=>this.props.changeLanguage('english')}><img  alt="uk" src="/18166.jpg" /></a> 
                    <a onClick={()=>this.props.changeLanguage('espanol')}><img  alt="es" src="/18168.jpg" /></a>
