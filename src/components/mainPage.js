@@ -21,7 +21,7 @@ export default MainPage
 const Inicio = () => {
     return(
         <div className="ui segment" >
-        <img  className="ui small left rounded floated image m-3" src="/1265060_673310719365614_1302370417_o.jpg"/>
+        <img  alt="mypicture" className="ui small left rounded floated image m-3" src="/1265060_673310719365614_1302370417_o.jpg"/>
        <p className="pt-2">
        Solamente en espanol sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
        ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco 
@@ -44,7 +44,7 @@ const Inicio = () => {
 const Main = () => {
     return(
         <div className="ui segment" >
-            <img  className="ui small left rounded floated image m-3" src="/1265060_673310719365614_1302370417_o.jpg"/>
+            <img alt="mypicture" className="ui small left rounded floated image m-3" src="/1265060_673310719365614_1302370417_o.jpg"/>
            <p className="pt-2">
            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
            ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco 

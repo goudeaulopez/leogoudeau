@@ -3,7 +3,7 @@ import React from 'react'
 const Projects = props => {
      const projectsLanguage = props.language === 'english' ? <ProjectsEnglish/> : <ProjectsSpanish/>
      return(
-        <div style={{textAlign:'center'}}> 
+        <div style={{textAlign:'center',paddingTop:'10%'}}> 
           {projectsLanguage}
         </div>
     )

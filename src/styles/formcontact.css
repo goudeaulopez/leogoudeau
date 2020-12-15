@@ -1,0 +1,49 @@
+@media only screen and (max-width: 600px) {
+    .contactmeDesktop{
+        display: none;
+    }
+    .contactmeMobile{
+      
+    }
+    #contact{
+        display: none;
+    }
+    .contactmeMobile #pMobile{
+        text-align: center;
+      }
+    .contactmeMobile #iwhatsapp{
+      color: #34eb3a;
+      font-size: 32px;
+      margin-left: 35%;
+    }
+    .contactmeMobile #iphoneIcon{
+        color:#25252b;
+        font-size: 32px;
+        margin-left: 10%;
+    }
+}
+@media only screen and (min-width: 600px) {
+ .contactmeMobile{
+     display: none;
+ }
+  #contact{
+      padding-left: 20px;
+  }
+  #p{
+    padding-left: 5%;
+    padding-top: 7px;
+  }
+  .contactmeDesktop{
+      display: flex;
+     
+  }
+  .contactmeDesktop #whatapp{
+      margin-left: 20px;
+      font-size: 20px;
+     
+  }
+  .contactmeDesktop #phoneicon{
+    margin-left: 20px;
+    font-size: 20px;
+  }
+}

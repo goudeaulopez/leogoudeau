@@ -1,26 +1,23 @@
 import React from 'react'
+import FormContact from './formContact'
+import '../styles/contact.css'
 
-const Contact = props =>{
-    const contactLanguage = props.language === 'english' ? <ContactEnglish/> : <ContactSpanish/>
+class Contact extends React.Component {
+    render(){
+       
     return(
-        <div style={{textAlign:'center'}}>
-          {contactLanguage}
-        </div>
+        <div>
+            <div className="contactDesktop">
+              
+                 <FormContact language={this.props.language}/>
+            </div>
+            <div className="contactMobile">
+                
+                 <FormContact language={this.props.language}/>
+            </div>
+       </div>
     )
+  }
 }
 export default Contact
 
-const ContactSpanish = () => {
-    return(
-        <div>
-          contacto
-       </div>
-    )
-}
-const ContactEnglish = () => {
-    return(
-        <div>
-           contact
-        </div>
-    )
-}

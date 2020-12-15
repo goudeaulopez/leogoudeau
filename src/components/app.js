@@ -1,9 +1,10 @@
 import React from 'react'
 import Header from './header'
-import About from './about'
+import Education from './education'
 import Projects from './projects'
 import Contact from './contact'
 import MainPage from './mainPage'
+import Work from './work'
 import '../styles/app.css'
 
 
@@ -20,12 +21,14 @@ class App extends React.Component{
     }
     menuNavigation = () => {
         switch(this.state.menuBar){
-            case 'about':
-                return <About language={this.state.language}/>
-            case 'projects':
+            case 'Education':
+                return <Education language={this.state.language}/>
+            case 'Projects':
                 return <Projects language={this.state.language}/>
-            case 'contact':
+            case 'Contact':
                 return <Contact language={this.state.language}/>
+            case 'Work':
+                return <Work language={this.state.language}/>
             default:
                 return <MainPage language={this.state.language}/>
         }

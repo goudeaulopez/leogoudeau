@@ -1,0 +1,22 @@
+@media only screen and (max-width: 600px) {
+  .contactDesktop{
+    display: none;
+  }
+  .contactMobile{
+    margin-top: 20%;
+  }
+  
+}
+@media only screen and (min-width: 600px) {
+   .contactMobile{
+     display: none;
+   }
+   .contactDesktop{
+     width: 60%;
+     margin-left: 20%;
+     margin-right: 20%;
+     margin-top: 7%;
+   }
+  
+   
+}
