@@ -112,6 +112,7 @@ class FormContact extends React.Component{
                   <p id="pMobile">{this.props.language === 'english' ?'you can also call or message me on': 'puedes llamarme o mandame un whatapp'}</p>
                   <a  href="https://api.whatsapp.com/send?phone=610426121161"><i id="iwhatsapp" className="whatsapp icon"></i></a>
                   <a  href="tel:+610426121161"><i id="iphoneIcon"  className="phone icon"></i> </a> 
+                  <br/><br/>
                 </div>
            
             </div>
