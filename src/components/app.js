@@ -7,9 +7,11 @@ import MainPage from './mainPage'
 import Work from './work'
 import '../styles/app.css'
 
+//6LfVGgcaAAAAACYZe13PTNs0JPkN-3q6EhWDUkMS
 
 class App extends React.Component{
     state={language:'english',menuBar:'',menuMobile:false}
+    
     changeLanguage = language => {
         this.setState({language})
     }

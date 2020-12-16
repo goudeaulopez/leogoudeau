@@ -1,8 +1,13 @@
 import React from 'react'
 import { Field,reset,reduxForm} from 'redux-form'
+import Recaptcha from 'react-invisible-recaptcha'
 import '../styles/formcontact.css'
 
 class FormContact extends React.Component{
+    state={messageSent:false}
+    onResolved= () =>{
+    this.setState({messageSent:true})
+   }
     renderError(meta){
 
         if( meta.error && meta.touched ){
@@ -51,7 +56,10 @@ class FormContact extends React.Component{
         )
     }  //service_n71tjuo
     onSubmit = (formvalue,dispatch) => {
-        console.log(formvalue)
+        
+            console.log(formvalue)
+       
+        
         dispatch(reset('form1'))
     }
     render(){
@@ -101,8 +109,11 @@ class FormContact extends React.Component{
                     />
                     <button type="submit" 
                            className="ui button" 
+                           onClick={this.handleSubscribe}
                     >{Submit}</button>  
+                    
                </form>
+             
                 <div className="contactmeDesktop">
                   <p id="p">{this.props.language === 'english' ?'you can also call or message me on': 'puedes llamarme o mandame un whatapp'}</p>
                   <a  style={{color:'#25252b',textDecoration:'none'}} href="https://api.whatsapp.com/send?phone=610426121161"><i style={{color:'#34eb3a'}} id="whatapp" className="whatsapp icon"></i>+61 0426121161</a>
@@ -114,8 +125,12 @@ class FormContact extends React.Component{
                   <a  href="tel:+610426121161"><i id="iphoneIcon"  className="phone icon"></i> </a> 
                   <br/><br/>
                 </div>
-           
-            </div>
+                <Recaptcha
+                    ref={ref=>this.Recaptcha=ref}
+                    sitekey='6LdJfAgaAAAAAOry59TJBSDKY6vBSkNinjztEobp'
+                    onResolved={this.onResolved}
+                />  
+           </div>
         )   //style={{color:'#25252b'}}
     }
 }
