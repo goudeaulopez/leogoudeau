@@ -5,6 +5,13 @@
   .contactMobile{
     margin-top: 20%;
   }
+  #messageMobile{
+    width: 100%;
+    background-color: #42f54b;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
   
 }
 @media only screen and (min-width: 600px) {
@@ -16,6 +23,13 @@
      margin-left: 20%;
      margin-right: 20%;
      margin-top: 7%;
+   }
+   #messageDesktop{
+     width: 100%;
+     background-color: #42f54b;
+     color: white;
+     text-align: center;
+     padding: 10px;
    }
   
    

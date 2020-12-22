@@ -1,65 +1,92 @@
 import React from 'react'
+import SearchBar from './searchBar'
 import '../styles/header.css'
 
 class Header extends React.Component{
-   
-    render(){
+   state={searchSomething:false}
+   searchicon = searchSomething => {
+       this.setState({searchSomething})
+   }
+   render(){
         const mainPage = this.props.language === 'english'?'Home':'Inicio'
         const education =  this.props.language === 'english'?'Education':'Educacion'
         const projects =  this.props.language === 'english'?'Projects':'Projectos'
         const contacto =  this.props.language === 'english'?'Contact':'Contacto'
         const work =  this.props.language === 'english'?'Works':'Trabajos'
-        const selectLang =  this.props.language === 'english'?'Select language':'Selecciona idioma'
+        const searchbar = this.props.menuBar === 'Images'  || this.props.menuBar === 'Videos' ? 
+        <SearchBar searchIng={this.props.searchIng} language={this.props.language} menuBar={this.props.menuBar}/>:null
+
+        const searchSomething = this.state.searchSomething=== false
+        ?
+        <SearchIcon 
+            menuMobile={this.props.menuMobile} 
+            menuBar={this.props.menuBar} 
+            language={this.props.language}
+            changeLanguage={this.props.changeLanguage}
+            selectMenuMobile={this.props.selectMenuMobile}
+            searchicon ={this.searchicon}
+       />
+       :
+       <div className="mobileHeader navbar fixed-top navbar-light bg-light justify-content-between">
+       <SearchBar 
+             searchIng ={this.props.searchIng} 
+            language={this.props.language}
+            menuBar={this.props.menuBar}
+            searchicon ={this.searchicon}
+        />
+        </div>
+
        
-        const menuMobile = !this.props.menuMobile
-//this.upvote
+
         return(
             <div>
                 <div className="desktopHeader navbar fixed-top navbar-light bg-light mb-0">
-                <a  className="title navbar-brand pt-2 pl-2">MyResume</a>
+                     <a  className="title navbar-brand pt-2 pl-2">MyResume</a>
                      <ul className="navbar-nav mr-auto d-flex flex-row ml-3">
-                         <li className="nav-item ml-4">
-                             <p  onClick={()=>{this.props.selectMenuBar('')}}  className="nav-link pt-2">{mainPage}</p>
+                          <li className="nav-item ml-2">
+                             <p onClick={()=>{this.props.selectMenuBar('')}}  
+                                className="nav-link pt-2">
+                                 {mainPage}
+                            </p>
+                          </li>
+                          <li className="nav-item ml-2">
+                            <p onClick={()=>this.props.selectMenuBar('Education')}
+                               className="nav-link pt-2">
+                            {education}
+                            </p>
                          </li>
-                         <li className="nav-item ml-3">
-                            <p  onClick={()=>this.props.selectMenuBar('Education')} className="nav-link pt-2">{education}</p>
-                         </li>
-                         <li className="nav-item ml-3">
-                            <p  onClick={()=>this.props.selectMenuBar('Work')} className="nav-link pt-2">{work}</p>
-                         </li>
-                         <li className="nav-item ml-3">
-                             <p  onClick={()=>this.props.selectMenuBar('Projects')} className="nav-link pt-2">{projects}</p>
-                         </li>
-                         <li className="nav-item ml-3">
-                             <p  onClick={()=>this.props.selectMenuBar('Contact')} className="nav-link pt-2">{contacto}</p>
-                         </li>
+                         <li className="nav-item ml-2">
+                             <p onClick={()=>this.props.selectMenuBar('Work')} 
+                                className="nav-link pt-2">
+                            {work}
+                            </p>
+                        </li>
+                        <li className="nav-item ml-2">
+                          <p  onClick={()=>this.props.selectMenuBar('Projects')} 
+                             className="nav-link pt-2">{projects}</p>
+                        </li>
+                        <li className="nav-item ml-2">
+                           <p onClick={()=>this.props.selectMenuBar('Contact')} 
+                           className="nav-link pt-2">{contacto}</p>
+                       </li>
+                        <li className="nav-item ml-3" >
+                           {searchbar}
+                       </li>
+                   </ul>
+                    <div className="mr-5 ml-2 mt-3" style={{display:'flex'}}>
                          
-                     </ul>
-                     
-                     <div className="mr-5 ml-2 mt-3" style={{display:'flex'}}>
-                         {selectLang} 
-                        <p  onClick={()=>this.props.changeLanguage('english')}><img  alt="uk" src="/18166.jpg" /></p> 
-                        <p onClick={()=>this.props.changeLanguage('espanol')}><img  alt="es" src="/18168.jpg" /></p>
-                    </div>
-                     
+                         <p onClick={()=>this.props.changeLanguage('english')}><img  alt="uk" src="/18166.jpg" /></p> 
+                         <p onClick={()=>this.props.changeLanguage('espanol')}><img  alt="es" src="/18168.jpg" /></p>
                 </div>
-                <div className="mobileHeader navbar fixed-top navbar-light bg-light justify-content-between">
-                   <a  style={{fontSize:'20px',fontWeight:'bold'}} className="title navbar-brand pt-2 pl-2">
-                       <Title language={this.props.language} menuBar={this.props.menuBar}/>
-                   </a>
-                  <div>
-                   <a  onClick={()=>this.props.changeLanguage('english')}><img  alt="uk" src="/18166.jpg" /></a> 
-                   <a  onClick={()=>this.props.changeLanguage('espanol')}><img  alt="es" src="/18168.jpg" /></a>
-                   <i onClick={()=>this.props.selectMenuMobile(menuMobile)} className="bars icon mt-1 ml-2 large"></i>
-                  </div>
                 </div>
+                  {searchSomething}
                 <div id="languageHeaderMobile">
                    {
                        this.props.menuMobile === false ? 
                        null :
                        <Menu language={this.props.language} selectMenuBar={this.props.selectMenuBar}/>
                    }
-                </div>
+                 </div>
                  
             </div>
         )
@@ -70,7 +97,7 @@ export default Header
 const Menu = props => {
         const mainPage =  props.language === 'english'?'MyResume':'MyResume'
         const education=  props.language === 'english'?'Education':'Educacion'
-        const work = props.language === 'english'?'Works':'Trabajos'
+        const work      = props.language === 'english'?'Works':'Trabajos'
         const projects =  props.language === 'english'?'Projects':'Projectos'
         const contacto =  props.language === 'english'?'Contact':'Contacto'
 
@@ -93,6 +120,16 @@ const Title = props => {
           return props.language === 'english'?'Works':'Trabajos'
       case 'Projects':
           return props.language === 'english'?'Projects':'Projectos'
+      case 'Images':
+          return props.language === 'english'?'Images':'Imagenes'
+      case 'DisplayImage':
+            return props.language === 'english'?'Images':'Imagenes'
+      case 'Videos':
+          return  props.language === 'english'?'Videos':'Videos'
+      case 'Validations':
+           return props.language === 'english'?'Validations':'Validaciones'
+      case 'Weather':
+            return props.language === 'english'?'Weather':'Tiempo'
       case 'Contact':
           return props.language === 'english'?'Contact':'Contacto'
       default:
@@ -101,21 +138,24 @@ const Title = props => {
 }
 
 
-/*
-const FlagLanguages = props => {
-   // const selectLang =  props.language === 'english'?'Select language':'Selecciona idioma'  {selectLang} 
-    return <div style={{marginTop:'1%',marginLeft:'2%'}}>
-   
-    <a onClick={()=>props.changeLanguage('english')}><img  alt="uk" src="/18166.jpg" /></a> 
-    <a onClick={()=>props.changeLanguage('espanol')}><img  alt="es" src="/18168.jpg" /></a>
-</div>
-}
+const SearchIcon = props => {
 
-*/
-/*
-<a onClick={()=>this.props.changeLanguage('english')}><i className="gb flag ml-3"></i></a>
-                        <a  onClick={()=>this.props.changeLanguage('espanol')}><i className="big flag es"></i></a>
-<FlagLanguages changeLanguage={this.props.changeLanguage} language={this.props.language}/>
-<a onClick={()=>props.changeLanguage('english')}><i className="flag gb ml-2 "></i></a>
-    <a  onClick={()=>props.changeLanguage('espanol')}><i className="flag es"></i></a>
-*/
+    const menuMobile = !props.menuMobile
+    const searchicon = props.menuBar === 'Images'  || props.menuBar === 'Videos' ? 
+    <i onClick={()=>{props.searchicon(true)}} className="search icon mt-1 ml-2 large"></i>:
+    ''
+
+    return(
+        <div className="mobileHeader navbar fixed-top navbar-light bg-light justify-content-between">
+             <a  style={{fontSize:'18px',fontWeight:'bold'}} className="title navbar-brand pt-2 pl-1">
+                     <Title language={props.language} menuBar={props.menuBar}/>
+            </a>
+           <div>
+            {searchicon}
+            <a  onClick={()=>props.changeLanguage('english')}><img  alt="uk" src="/18166.jpg" /></a> 
+            <a  onClick={()=>props.changeLanguage('espanol')}><img  alt="es" src="/18168.jpg" /></a>
+            <i onClick={()=>props.selectMenuMobile(menuMobile)} className="bars icon mt-1 ml-2 large"></i>
+          </div>
+       </div> 
+    )
+}

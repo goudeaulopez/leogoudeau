@@ -1,10 +1,11 @@
 import React from 'react'
 import { Field,reset,reduxForm} from 'redux-form'
 import Recaptcha from 'react-invisible-recaptcha'
+import * as emailjs from 'emailjs-com'
 import '../styles/formcontact.css'
 
 class FormContact extends React.Component{
-    state={messageSent:false}
+    state={messageSent:false }
     onResolved= () =>{
     this.setState({messageSent:true})
    }
@@ -57,7 +58,22 @@ class FormContact extends React.Component{
     }  //service_n71tjuo
     onSubmit = (formvalue,dispatch) => {
         
-            console.log(formvalue)
+        console.log(formvalue)
+        this.props.setMessageSent(true)
+        const templateParams = {
+            from_name: formvalue.firstname,
+            from_email: formvalue.email,
+            subject:'Nuevo mensaje',
+            from_number:formvalue.phone,
+            message_html: formvalue.description
+          };
+          emailjs.send(
+            'service_n71tjuo' ,
+            'template_2tckn8s',
+            templateParams,
+            'user_RIXJL1RaxVcLJExHUTpGm'
+          )
+            
        
         
         dispatch(reset('form1'))
@@ -72,12 +88,13 @@ class FormContact extends React.Component{
        const Mensaje= this.props.language === 'english' ? 'Message':'Description'
        const MessagePH = this.props.language === 'english' ? 'Please enter a description':'Por favor escriba su mensaje'
        const Submit =this.props.language === 'english' ? 'Submit':'Enviar'
-       const contact = this.props.language === 'english' ? 'Contact me':'Contactame'
-       
+      
+      // const confirmation = this.props.language === 'english'?'Message sent':'Mensage enviado'
+       //
       return(
             <div>
-             <h3 id="contact">{contact}</h3>
-             <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form m-4">
+             
+              <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form m-4">
                <div className="field">
                    <Field
                         name="firstname"

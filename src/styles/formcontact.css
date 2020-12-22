@@ -2,12 +2,7 @@
     .contactmeDesktop{
         display: none;
     }
-    .contactmeMobile{
-      
-    }
-    #contact{
-        display: none;
-    }
+  
     .contactmeMobile #pMobile{
         text-align: center;
       }
@@ -21,18 +16,17 @@
         font-size: 32px;
         margin-left: 10%;
     }
+   
 }
 @media only screen and (min-width: 600px) {
  .contactmeMobile{
      display: none;
  }
-  #contact{
-      padding-left: 20px;
-  }
   #p{
-    padding-left: 5%;
+    padding-left: 3%;
     padding-top: 7px;
   }
+
   .contactmeDesktop{
       display: flex;
      
