@@ -47,7 +47,7 @@ const Inicio = () => {
         </p>
         <p>Saluda atentamente <br/> Leonardo Goudeau</p>
        
-       
+       <br/><br/>
     </div>
     )
 }
@@ -81,7 +81,7 @@ const Main = () => {
             </p>
             <p>Best regards <br/> Leonardo Goudeau</p>
            
-           
+            <br/><br/>
         </div>
     ) 
 }
