@@ -25,26 +25,7 @@ const Inicio = () => {
         <img id="desktopImage" alt="mypicture" className="ui small left rounded floated image m-3" src="/IMG20201223172446.jpg"/>
         <h4 className="pt-3">Leonardo Goudeau</h4>
         <h6 >Front-End Developer</h6>
-        <p>
-            Desde el inicio de mi capacitacion en el TAFE en 2017, yo estuve trabajando en algunos de mis
-            propios projectos. 
-            React fue unas de las asignaturas que yo estudie y me siento bien preparado escribiendo codigo
-            con este formato
-        </p>
-         <p>
-           Los conocimientos que yo he adquirido son tales como el component state, redux, usando
-           API externos, aplicando estilo con librerias de javascript, operaciones CRUD usando ASP.net y
-           Express, graficos con d3, integrando AWS para hosting y usando base de datos tales como 
-           mongoDB y mySQL. Yo tambien puedo implementar estos conocimientos con react native
-        </p>
-        <p>
-          A pesar que no tengo mucha experiencia, yo tengo un entendimiento solido de las reglas
-          de programacion con los componentes State y Props
-        </p>
-        <p>
-        Apreciariria tener la oportunidad para hablar contigo mas sobre lo que estoy haciendo y como yo 
-        podria usar mis conocimientos para beneficiar tu organizacion
-        </p>
+       
         <p>Saluda atentamente <br/> Leonardo Goudeau</p>
        
        <br/><br/>
@@ -55,33 +36,24 @@ const Main = () => {
     return(
         <div className="ui segment" >
             <img id="mobileImage" alt="mypicture" className="ui tiny left rounded floated image m-3" src="/IMG20201223172446.jpg"/>
-            <img id="desktopImage" alt="mypicture" className="ui small left rounded floated image m-3" src="/IMG20201223172446.jpg"/>
-        <h4 className="pt-3">Leonardo Goudeau</h4>
-            <h6 >Front-End Developer</h6>
-            <p>
-            Since I began my training at TAFE in 2017, I have worked on some  of 
-             my own projects.<br/>
-             React was one of the subjects I studied and
-             I feel very confident writing code with this framework </p>
-             <p>
-             I have acquired skills such as working with the component state,
-              redux, playing with external Apis, applying good styling with 
-              some JavaScript libraries, crud operations with Asp.net and Express, 
-              charts with D3, integrating with Aws for deploying and using some 
-              databases such as mongo dB and MySQL.I can also implement these skills with React native.
-            </p>
-            <p>
-            Although I don’t have a lot of experience, 
-            I do have a good, solid understanding of programming 
-            rules most with the component state and props.
-            </p>
-            <p>
-            I would appreciate the opportunity to talk with you more about what I am doing
-             and how I could use my skills to benefit your organisation. 
-            </p>
-            <p>Best regards <br/> Leonardo Goudeau</p>
+            <img id="desktopImage" alt="mypicture" className="ui small left rounded floated image m-4" src="/IMG20201223172446.jpg"/>
+            <h3 className="pt-5 pl-3">Leonardo Goudeau</h3>
+            <h5 className="pt-1 pl-3 pb-2" >Front-End Developer</h5>
+            <p className="p-2" style={{fontSize:'14px'}}>
+              I began my coding journey about 3 years ago after being in different industries 
+              since I finished Univesity back in Chile.
            
-            <br/><br/>
+           
+            
+              <br/>
+              I love software development because it gives me the chance to create, develop and solve problems
+              to help people with their ideas.
+              <br/>
+             Every new opportunity is a  welcome challenge. If you want this new opportunity
+             to lead to success, you have to work hard, feel motivated and be open to learn from others
+            </p>
+           
+            
         </div>
     ) 
 }
