@@ -25,7 +25,7 @@ const Inicio = () => {
         <img id="desktopImage" alt="mypicture" className="ui small left rounded floated image ml-3 mr-5" src="/IMG20201223172446.jpg"/>
         <h3>Leonardo Goudeau</h3>
         <h5>Front-End Developer</h5>
-        
+        <br/><br/><br/>
         <p>
          Yo comenze mi viaje en programacion hace 3 años, despues de haber estado en diferentes industrias desde
          que termine la universidad en Chile
