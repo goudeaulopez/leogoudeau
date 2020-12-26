@@ -11,6 +11,26 @@
     #desktopImage{
         display: none;
     }
+    p{
+        font-family: "Times New Roman", Times, cursive;
+        font-size: 16px;
+        color: #3e4e69;
+        padding-left: 15px;
+    }
+     h3{
+        font-family: "Times New Roman", Times, cursive;
+        color: #3e4e69;
+
+
+       
+    }
+    h5{
+        font-family: "Times New Roman", Times, cursive;
+        color: #3e4e69
+    }
+     h6{
+        padding-left: 15px;
+    }
   }
 @media only screen and (min-width: 600px) {
     .mainDesktop{
@@ -25,4 +45,5 @@
     #mobileImage{
         display: none;
     }
+   
 }

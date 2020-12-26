@@ -94,7 +94,7 @@ class FormContact extends React.Component{
       return(
             <div>
              
-              <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form m-4">
+              <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form m-3">
                <div className="field">
                    <Field
                         name="firstname"
@@ -135,6 +135,7 @@ class FormContact extends React.Component{
                   <p id="p">{this.props.language === 'english' ?'you can also call or message me on': 'puedes llamarme o mandame un whatapp'}</p>
                   <a  style={{color:'#25252b',textDecoration:'none'}} href="https://api.whatsapp.com/send?phone=610426121161"><i style={{color:'#34eb3a'}} id="whatapp" className="whatsapp icon"></i>+61 0426121161</a>
                   <a  style={{color:'#25252b',textDecoration:'none'}} href="tel:+610426121161"><i style={{color:'#25252b'}} id="phoneicon"  className="phone icon"></i>+61 0426121161 </a> 
+                  
                 </div>
                 <div className="contactmeMobile">
                   <p id="pMobile">{this.props.language === 'english' ?'you can also call or message me on': 'puedes llamarme o mandame un whatapp'}</p>
@@ -147,6 +148,7 @@ class FormContact extends React.Component{
                     sitekey='6LdJfAgaAAAAAOry59TJBSDKY6vBSkNinjztEobp'
                     onResolved={this.onResolved}
                 />  
+               
            </div>
         )   //style={{color:'#25252b'}}
     }
