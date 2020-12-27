@@ -15,7 +15,7 @@
         font-family: "Times New Roman", Times, cursive;
         font-size: 16px;
         color: #3e4e69;
-        padding-left: 15px;
+        padding-left: 12px;
     }
      h3{
         font-family: "Times New Roman", Times, cursive;
@@ -44,6 +44,15 @@
     }
     #mobileImage{
         display: none;
+    }
+    p{
+        font-family: "Times New Roman", Times, cursive;
+        font-size: 16px;
+        color: #3e4e69;
+        padding-left: 15px;
+    }
+    h6{
+        padding-left: 15px;
     }
    
 }

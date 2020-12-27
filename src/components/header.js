@@ -75,8 +75,8 @@ class Header extends React.Component{
                    </ul>
                     <div className="mr-5 ml-2 mt-3" style={{display:'flex'}}>
                          
-                         <p onClick={()=>this.props.changeLanguage('english')}><img  alt="uk" src="/18166.jpg" /></p> 
-                         <p onClick={()=>this.props.changeLanguage('espanol')}><img  alt="es" src="/18168.jpg" /></p>
+                         <p  onClick={()=>this.props.changeLanguage('english')}><img  alt="uk" src="/18166.jpg" /></p> 
+                         <p  onClick={()=>this.props.changeLanguage('espanol')}><img  alt="es" src="/18168.jpg" /></p>
                 </div>
                 </div>
                   {searchSomething}
