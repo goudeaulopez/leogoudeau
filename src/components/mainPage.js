@@ -53,7 +53,7 @@ const Main = () => {
           <div >
                   <img id="mobileImage" alt="mypicture" className="ui tiny left rounded floated image ml-3 " src="/IMG20201223172446.jpg"/>
                   <img id="desktopImage" alt="mypicture" className="ui small left rounded floated image ml-3 mr-5" src="/IMG20201223172446.jpg"/>
-                  <h3>Leonardo Goudeau</h3>
+                  <h3 id="onlyMobile">Leonardo Goudeau</h3>
                   <h5>Front-End Developer</h5>
                   <br/>
                   <p>
@@ -70,7 +70,7 @@ const Main = () => {
                       framework.<br/>
                       I hope you take a look in my projects and maybe we get in touch!!!</p>
                 
-                  <p>
+                  <p id="onlyDesktop">
                   Every new opportunity is a  welcome challenge. If you want this new opportunity
                   to lead to success, you have to work hard, feel motivated and be open to learn from others 
                   </p>

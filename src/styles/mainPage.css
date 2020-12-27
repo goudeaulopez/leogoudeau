@@ -5,6 +5,9 @@
         margin-right: 3%;
         margin-top: 20%;
     }
+    #onlyMobile{
+        padding-top: 35px;
+    }
     .mainDesktop{
         display: none;
     }
@@ -14,22 +17,27 @@
     p{
         font-family: "Times New Roman", Times, cursive;
         font-size: 16px;
-        color: #3e4e69;
+        color: #76857a;
         padding-left: 12px;
     }
      h3{
         font-family: "Times New Roman", Times, cursive;
-        color: #3e4e69;
+        color: #76857a;
 
 
        
     }
     h5{
         font-family: "Times New Roman", Times, cursive;
-        color: #3e4e69
+        color: #76857a
     }
      h6{
         padding-left: 15px;
+        color: #263029;
+        font-weight: bold;
+    }
+    #onlyDesktop{
+        display: none;
     }
   }
 @media only screen and (min-width: 600px) {
@@ -48,11 +56,13 @@
     p{
         font-family: "Times New Roman", Times, cursive;
         font-size: 16px;
-        color: #3e4e69;
+        color: #76857a;
         padding-left: 15px;
     }
     h6{
         padding-left: 15px;
+        color: #263029;
+        font-weight: bold;
     }
    
 }
