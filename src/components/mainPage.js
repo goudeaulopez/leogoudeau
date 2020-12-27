@@ -22,9 +22,7 @@ export default MainPage
 
 const Inicio = () => {
     return(
-        <div>
-        
-       
+        <div className="mainpage" >
         <h3>Leonardo Goudeau</h3>
         <h5>Front-End Developer</h5>
         <br/>
@@ -52,8 +50,8 @@ const Inicio = () => {
 }
 const Main = () => {
     return(
-          <div >
-                  <h3 id="onlyMobile">Leonardo Goudeau</h3>
+          <div className="mainpage" >
+                  <h3>Leonardo Goudeau</h3>
                   <h5>Front-End Developer</h5>
                   <br/>
                   <p>

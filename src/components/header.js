@@ -41,7 +41,7 @@ class Header extends React.Component{
         return(
             <div>
                 <div className="desktopHeader navbar fixed-top navbar-light bg-light mb-0">
-                     <a  className="title navbar-brand pt-2 pl-2">MyResume</a>
+                     <a style={{color:'#263029'}}  className="title navbar-brand pt-2 pl-2">MyResume</a>
                      <ul className="navbar-nav mr-auto d-flex flex-row ml-3">
                           <li className="nav-item ml-2">
                              <p onClick={()=>{this.props.selectMenuBar('')}}  
@@ -147,7 +147,7 @@ const SearchIcon = props => {
 
     return(
         <div className="mobileHeader navbar fixed-top navbar-light bg-light justify-content-between">
-             <a  style={{fontSize:'18px',fontWeight:'bold'}} className="title navbar-brand pt-2 pl-1">
+             <a  style={{fontSize:'18px',fontWeight:'bold',color:'#263029'}} className="title navbar-brand pt-2 pl-1">
                      <Title language={props.language} menuBar={props.menuBar}/>
             </a>
            <div>

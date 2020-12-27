@@ -22,6 +22,8 @@
     padding-left: 10%;
     padding-bottom: 6px;
     border-bottom: 1px solid rgb(219, 197, 197);
+    color: #76857a;
+    font-size: 14px;
   }
 }
 @media only screen and (min-width: 600px) {
