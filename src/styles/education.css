@@ -1,0 +1,49 @@
+@media only screen and (max-width: 600px) {
+    .education{
+        margin-top: 20%;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+
+    }
+    .education #uisegment{
+        display: flex;
+    }
+    .education p{
+        padding-left: 3px;
+        padding-right: 3px;
+        color: #76857a;
+        font-family: "Times New Roman", Times, serif;
+    }
+    .education #h3{
+        display: none;
+    }
+
+  }
+ 
+  @media only screen and (min-width: 600px) {
+     .education{
+         margin-top: 8%;
+         width: 80%;
+         margin-left: 10%;
+         margin-right: 10%;
+
+     }
+     .education #uisegment{
+         display: flex;
+     }
+     .education p{
+         padding-left: 10px;
+         padding-right: 10px;
+     }
+     .education #h3{
+         padding-left: 10px;
+         color: #2a2e33;
+        font-family: "Times New Roman", Times, serif;
+     }
+    .education #keySkills{
+        padding-left: 10px;
+        color: #2a2e33;
+       font-family: "Times New Roman", Times, serif;
+     }
+  }
