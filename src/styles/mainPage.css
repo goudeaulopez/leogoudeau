@@ -18,12 +18,13 @@
         color: #76857a;
         padding-left: 12px;
         padding-bottom: 5px;
+        font-family: "Times New Roman", Times, serif;
     }
     .mainpage h3{
         
         color: #2d4233;
         padding-top: 10px;
-
+        font-family: "Times New Roman", Times, serif;
 
        
     }
@@ -31,7 +32,7 @@
         
         color: #2d4233;
         padding-bottom: 20px;
-        
+        font-family: "Times New Roman", Times, serif;
     }
     .mainpage h6{
         padding-left: 15px;
