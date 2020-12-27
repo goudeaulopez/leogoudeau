@@ -8,9 +8,11 @@ const MainPage = props => {
     return(
        <div>
             <div className="mainDesktop">
+            <img id="desktopImage" alt="mypicture" className="ui small left rounded floated image ml-3 mr-5" src="/IMG20201223172446.jpg"/>
               {mainPage}
             </div>
             <div className="mainMobile">
+            <img id="mobileImage" alt="mypicture" className="ui tiny left rounded floated image ml-3 " src="/IMG20201223172446.jpg"/>
               {mainPage}
             </div>
        </div>
@@ -21,8 +23,8 @@ export default MainPage
 const Inicio = () => {
     return(
         <div>
-        <img id="mobileImage" alt="mypicture" className="ui tiny left rounded floated image ml-3 " src="/IMG20201223172446.jpg"/>
-        <img id="desktopImage" alt="mypicture" className="ui small left rounded floated image ml-3 mr-5" src="/IMG20201223172446.jpg"/>
+        
+       
         <h3>Leonardo Goudeau</h3>
         <h5>Front-End Developer</h5>
         <br/>
@@ -39,7 +41,7 @@ const Inicio = () => {
             Me siento con mucha confianza escribiendo programas y todos mis projectos estan escrito en React.<br/>
             Espero que mires mis projectos y talvez podamos conversar!!
         </p>
-        <p >
+        <p id="onlyDesktop" >
         Cada nueva oportunidad es un gran desafio. Si tu quieres que esta nueva oportunidad triunfe tu tienes 
         que trabajar duro, sentirte motivado y estar abierto para aprender de los otros
         </p>
@@ -51,8 +53,6 @@ const Inicio = () => {
 const Main = () => {
     return(
           <div >
-                  <img id="mobileImage" alt="mypicture" className="ui tiny left rounded floated image ml-3 " src="/IMG20201223172446.jpg"/>
-                  <img id="desktopImage" alt="mypicture" className="ui small left rounded floated image ml-3 mr-5" src="/IMG20201223172446.jpg"/>
                   <h3 id="onlyMobile">Leonardo Goudeau</h3>
                   <h5>Front-End Developer</h5>
                   <br/>
