@@ -132,7 +132,7 @@ class FormContact extends React.Component{
                </form>
              
                 <div className="contactmeDesktop">
-                  <p id="p">{this.props.language === 'english' ?'you can also call or message me on': 'puedes llamarme o mandame un whatapp'}</p>
+                  <p id="p">{this.props.language === 'english' ?' call or message me on': 'llamarme o mandame un whatapp'}</p>
                   <a  style={{color:'#25252b',textDecoration:'none'}} href="https://api.whatsapp.com/send?phone=610426121161"><i style={{color:'#34eb3a'}} id="whatapp" className="whatsapp icon"></i>+61 0426121161</a>
                   <a  style={{color:'#25252b',textDecoration:'none'}} href="tel:+610426121161"><i style={{color:'#25252b'}} id="phoneicon"  className="phone icon"></i>+61 0426121161 </a> 
                   
