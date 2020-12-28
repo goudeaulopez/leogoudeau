@@ -35,7 +35,7 @@ const AboutSpanish = () => {
                 <p>TAFE NSW Petersham</p>
                 <p>2019-presente</p>
             </div>
-            <h3 id="keySkills">key skills</h3>
+            <h3 id="keySkills">Habilidades</h3>
             <div className="ui stacked segments">
             <div className="ui horizontal segments">
               <div className="ui segment">
@@ -129,7 +129,7 @@ const AboutEnglish = () => {
                 <p>TAFE NSW Petersham</p>
                 <p>2019-Current</p>
             </div>
-            <h3 id="keySkills">key skills</h3>
+            <h3 id="keySkills">Key skills</h3>
             <div className="ui stacked segments">
             <div className="ui horizontal segments">
               <div className="ui segment">
@@ -147,27 +147,27 @@ const AboutEnglish = () => {
             </div>
             <div className="ui horizontal segments">
               <div className="ui segment">
-                <p>ReactNative</p>
+                <p>Azure</p>
               </div>
               <div className="ui segment">
-                <p>Express.js</p>
+                <p>Animate.js</p>
               </div>
               <div className="ui segment">
                 <p>Html</p>
               </div>
               <div className="ui segment">
-                <p>Css</p>
+                <p>ReactNative</p>
               </div>
             </div>
             <div className="ui horizontal segments">
               <div className="ui segment">
-                <p>Bootstrap</p>
+                <p>Agile</p>
               </div>
               <div className="ui segment">
                 <p>Semantic-ui</p>
               </div>
               <div className="ui segment">
-                <p>Animate.js</p>
+                <p>Github</p>
               </div>
               <div className="ui segment">
                 <p>Linq</p>
@@ -178,13 +178,13 @@ const AboutEnglish = () => {
                 <p>Git</p>
               </div>
               <div className="ui segment">
-                <p>Github</p>
+                <p>Express.js</p>
               </div>
               <div className="ui segment">
                 <p>Aws</p>
               </div>
               <div className="ui segment">
-                <p>Azure</p>
+                <p>Css</p>
               </div>
             </div>
             <div className="ui horizontal segments">
@@ -195,7 +195,7 @@ const AboutEnglish = () => {
                 <p>MongoDB</p>
               </div>
               <div className="ui segment">
-                <p>Agile</p>
+                <p>Bootstrap</p>
               </div>
               <div className="ui segment">
                 <p>D3</p>

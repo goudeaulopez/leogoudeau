@@ -12,7 +12,6 @@ class Header extends React.Component{
         const education =  this.props.language === 'english'?'Education':'Educacion'
         const projects =  this.props.language === 'english'?'Projects':'Projectos'
         const contacto =  this.props.language === 'english'?'Contact':'Contacto'
-        const work =  this.props.language === 'english'?'Works':'Trabajos'
         const searchbar = this.props.menuBar === 'Images'  || this.props.menuBar === 'Videos' ? 
         <SearchBar searchIng={this.props.searchIng} language={this.props.language} menuBar={this.props.menuBar}/>:null
 
@@ -55,12 +54,7 @@ class Header extends React.Component{
                             {education}
                             </p>
                          </li>
-                         <li className="nav-item ml-2">
-                             <p onClick={()=>this.props.selectMenuBar('Work')} 
-                                className="nav-link pt-2">
-                            {work}
-                            </p>
-                        </li>
+                         
                         <li className="nav-item ml-2">
                           <p  onClick={()=>this.props.selectMenuBar('Projects')} 
                              className="nav-link pt-2">{projects}</p>
@@ -97,7 +91,6 @@ export default Header
 const Menu = props => {
         const mainPage =  props.language === 'english'?'MyResume':'MyResume'
         const education=  props.language === 'english'?'Education':'Educacion'
-        const work      = props.language === 'english'?'Works':'Trabajos'
         const projects =  props.language === 'english'?'Projects':'Projectos'
         const contacto =  props.language === 'english'?'Contact':'Contacto'
 
@@ -105,7 +98,6 @@ const Menu = props => {
         <div className="menuHeader">
              <p onClick={()=>props.selectMenuBar('')}>{mainPage}</p>
              <p onClick={()=>{props.selectMenuBar('Education')}}>{education}</p>
-             <p onClick={()=>{props.selectMenuBar('Work')}}>{work}</p>
              <p onClick={()=>props.selectMenuBar('Projects')}>{projects}</p>
              <p onClick={()=>props.selectMenuBar('Contact')}>{contacto}</p>
         </div>
@@ -116,8 +108,6 @@ const Title = props => {
     switch(props.menuBar){
       case 'Education':
           return props.language === 'english'?'Education':'Educacion'
-      case 'Work':
-          return props.language === 'english'?'Works':'Trabajos'
       case 'Projects':
           return props.language === 'english'?'Projects':'Projectos'
       case 'Images':

@@ -4,7 +4,6 @@ import Education from './education'
 import Projects from './projects'
 import Contact from './contact'
 import MainPage from './mainPage'
-import Work from './work'
 import Images from './images'
 import Videos from './videos'
 import Weather from './weather'
@@ -83,8 +82,6 @@ class App extends React.Component{
                                 language={this.state.language}
                                 selectMenuBar={this.selectMenuBar}
                         />
-            case 'Work':
-                return <Work language={this.state.language}/>
             default:
                 return <MainPage language={this.state.language}/>
         }

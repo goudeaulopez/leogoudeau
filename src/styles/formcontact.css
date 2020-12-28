@@ -2,7 +2,9 @@
     .contactmeDesktop{
         display: none;
     }
-  
+    .desktopForm{
+      display: none;
+    }
     .contactmeMobile #pMobile{
         text-align: center;
       }
@@ -22,23 +24,14 @@
  .contactmeMobile{
      display: none;
  }
-  #p{
-    padding-left: 3%;
-    padding-top: 7px;
+ .contactmeDesktop{
+   display: flex;
+ }
+ .contactmeDesktop p{
+   padding-right: 10px;
+ }
+ .contactmeDesktop a{
+   padding-left: 10px;
+ }
 
-  }
-
-  .contactmeDesktop{
-      display: flex;
-     
-  }
-  .contactmeDesktop #whatapp{
-      margin-left: 20px;
-      font-size: 20px;
-     
-  }
-  .contactmeDesktop #phoneicon{
-    margin-left: 20px;
-    font-size: 20px;
-  }
 }

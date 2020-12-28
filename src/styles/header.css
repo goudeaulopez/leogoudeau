@@ -45,4 +45,8 @@
      width: 30px;
      
    }
+   .desktopHeader p{
+    color: #2a2e33;
+    font-family: "Times New Roman", Times, serif;
+   }
 }
