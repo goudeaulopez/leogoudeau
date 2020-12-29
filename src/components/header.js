@@ -8,6 +8,7 @@ class Header extends React.Component{
        this.setState({searchSomething})
    }
    render(){
+        
         const mainPage = this.props.language === 'english'?'Home':'Inicio'
         const education =  this.props.language === 'english'?'Education':'Educacion'
         const projects =  this.props.language === 'english'?'Projects':'Projectos'
@@ -16,6 +17,8 @@ class Header extends React.Component{
         <SearchBar searchIng={this.props.searchIng} language={this.props.language} menuBar={this.props.menuBar}/>:null
 
         const searchSomething = this.state.searchSomething=== false
+
+        
         ?
         <SearchIcon 
             menuMobile={this.props.menuMobile} 
@@ -24,6 +27,7 @@ class Header extends React.Component{
             changeLanguage={this.props.changeLanguage}
             selectMenuMobile={this.props.selectMenuMobile}
             searchicon ={this.searchicon}
+            searchSomething = {this.state.searchSomething}
        />
        :
        <div className="mobileHeader navbar fixed-top navbar-light bg-light justify-content-between">
@@ -32,12 +36,12 @@ class Header extends React.Component{
             language={this.props.language}
             menuBar={this.props.menuBar}
             searchicon ={this.searchicon}
+
         />
+   
         </div>
 
-       
-
-        return(
+       return(
             <div>
                 <div className="desktopHeader navbar fixed-top navbar-light bg-light mb-0">
                      <a style={{color:'#263029'}}  className="title navbar-brand pt-2 pl-2">MyResume</a>
@@ -129,11 +133,14 @@ const Title = props => {
 
 
 const SearchIcon = props => {
-
     const menuMobile = !props.menuMobile
-    const searchicon = props.menuBar === 'Images'  || props.menuBar === 'Videos' ? 
+    console.log(menuMobile)
+    const searchicon = props.menuBar === 'Images' && menuMobile === true || props.menuBar === 'Videos' && menuMobile === true ? 
     <i onClick={()=>{props.searchicon(true)}} className="search icon mt-1 ml-2 large"></i>:
     ''
+    
+
+
 
     return(
         <div className="mobileHeader navbar fixed-top navbar-light bg-light justify-content-between">

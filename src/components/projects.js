@@ -10,16 +10,15 @@ const Projects = props => {
     const projects = props.language === 'english' ? 'Projects':'Projectos'
     const imagesText = props.language === 'english'
     ?
-     'Pellentesque habitant morbi tristique senectus et netus etmalesuada fames ac turpis egestas. Vestibulum tortor quam Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam'
+     'Pellentesque habitant morbi tristique senectus et netus etmalesuada fames ac turpis egestas. Vestibulum tortor quam Pellentesque habitant morbi tristique senectus '
     :
     'Esto esta en espanol tristique senectus et netus etmalesuada fames ac turpis egestas. Vestibulum tortor quam Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam'
    
     return(
         <div className="projects"> 
           <h3 id="title">{projects}</h3>
-          <div id="firstseg" className="ui raised segment">
-                <h4 style={{paddingLeft:'10px'}}>{Images}</h4>
-                 <img  src="/1265060_673310719365614_1302370417_o.jpg" alt="imsssage" className="ui tiny left floated image m-3"/>
+           <div id="firstseg" className="ui raised segment">
+                <i style={{paddingLeft:'15px',color:'#969286'}} className="huge images icon"></i>
                  <p className="p-3">{imagesText}</p> 
                 <button 
                   onClick={()=>props.selectMenuBar('Images')}
@@ -82,25 +81,3 @@ const Projects = props => {
 export default Projects
 
 
-
-/*
-const projectsLanguage = props.language === 'english' ? <ProjectsEnglish/> : <ProjectsSpanish/>
-const ProjectsSpanish = () => {
-    return(
-        <div>
-         projectos
-       </div>
-    )
-}
-const ProjectsEnglish = () => {
-    return(
-        <div>
-           projects
-        </div>
-    )
-}
-
-<button className="mini ui primary right floated button mt-3">try out</button>
-
-
-*/

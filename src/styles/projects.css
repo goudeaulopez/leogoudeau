@@ -11,6 +11,10 @@
    #title{
        display: none;
    }
+   .projects p{
+    color: #76857a;
+    font-family: "Times New Roman", Times, serif;
+   }
   }
   @media only screen and (min-width: 600px) {
       .projects{
