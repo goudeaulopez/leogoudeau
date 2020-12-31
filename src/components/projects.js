@@ -10,15 +10,15 @@ const Projects = props => {
     const projects = props.language === 'english' ? 'Projects':'Projectos'
     const imagesText = props.language === 'english'
     ?
-     'You search for images calling Unplash api '
+     'Search images using Unplash API'
     :
-    'Esto esta en espanol tristique senectus et netus etmalesuada fames ac turpis egestas. Vestibulum tortor quam Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam'
+    'Buscar imagenes usando Unplash API'
    
     return(
         <div className="projects"> 
           <h3 id="title">{projects}</h3>
            <div id="firstseg" className="ui raised segment">
-                <i style={{paddingLeft:'15px',color:'#969286',marginRight:'30px'}} className="huge images icon"></i>
+                <i style={{paddingLeft:'15px',color:'#969286',marginRight:'30px'}} className="big images icon"></i>
                 {Images}
                  <p className="p-3">{imagesText}</p> 
                 <button 
