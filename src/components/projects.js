@@ -42,7 +42,7 @@ const Projects = props => {
                  
                  <p className="p-3">{videosText}</p>
                 <button 
-                 onClick={()=>props.selectMenuBar('Images')}
+                 onClick={()=>props.selectMenuBar('Videos')}
                 id="btndesktop" 
                 className="mini ui right floated primary button mr-3">{testButtonLanguage}</button>
                 <br/><br/>

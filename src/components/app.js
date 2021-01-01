@@ -30,6 +30,9 @@ class App extends React.Component{
       this.searchIng('colombia')
       this.searchVideo('colombia')
     }
+    selectingVideo = selectedVideo => {
+        this.setState({selectedVideo})
+    }
     changeLanguage = language => {
         this.setState({language})
     }
@@ -80,6 +83,7 @@ class App extends React.Component{
                           language={this.state.language}
                           onListVideos={this.state.videoList}
                           selectedVideo={this.state.selectedVideo}
+                          selectingVideo={this.selectingVideo}
                         />
             case 'Images':
                 return <Images 
