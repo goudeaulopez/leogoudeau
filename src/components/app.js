@@ -28,7 +28,7 @@ class App extends React.Component{
         }
     componentDidMount(){
       this.searchIng('colombia')
-      this.searchVideo('colombia')
+      this.searchVideo('salento colombia')
     }
     selectingVideo = selectedVideo => {
         this.setState({selectedVideo})
