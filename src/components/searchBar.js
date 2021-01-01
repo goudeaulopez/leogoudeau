@@ -8,8 +8,13 @@ class SearchBar extends React.Component{
     }
     onSubmit = e => {
         e.preventDefault()
-        this.props.searchIng(this.state.search)
-        this.setState({search:''})
+        if(this.props.menuBar === 'Videos'){
+            this.props.searchVideo(this.state.search)
+        }
+        else{
+            this.props.searchIng(this.state.search)
+        }
+         this.setState({search:''})
 
     }
 

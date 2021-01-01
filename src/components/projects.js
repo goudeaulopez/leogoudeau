@@ -13,6 +13,12 @@ const Projects = props => {
      'Search images using Unplash API'
     :
     'Buscar imagenes usando Unplash API'
+
+    const videosText = props.language === 'english'
+    ?
+     'Search videos using youtube API'
+    :
+    'Buscar imagenes usando youtube API'
    
     return(
         <div className="projects"> 
@@ -31,19 +37,14 @@ const Projects = props => {
                 
            </div>
            <div className="ui raised segment">
-            <h4 style={{paddingLeft:'10px'}}>{Videos}</h4>
-           <img  src="/1265060_673310719365614_1302370417_o.jpg" alt="imagess" className="ui tiny right floated image m-3"/>
+          
+            <i  style={{paddingLeft:'15px',color:'#969286',marginRight:'30px'}} className="big youtube icon"></i>  {Videos}
                  
-                 <p className="p-3">Pellentesque habitant morbi tristique senectus et netus et 
-                    malesuada fames ac turpis egestas. Vestibulum tortor quam, 
-                    feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
-                     eu libero sit amet quam egestas semper. Aenean ultricies mi
-                      vitae est. Mauris placerat eleifend leo.
-                </p>
+                 <p className="p-3">{videosText}</p>
                 <button 
-                 onClick={()=>props.selectMenuBar('Videos')}
+                 onClick={()=>props.selectMenuBar('Images')}
                 id="btndesktop" 
-                className="mini ui left floated primary button ml-3">{testButtonLanguage}</button>
+                className="mini ui right floated primary button mr-3">{testButtonLanguage}</button>
                 <br/><br/>
            </div>
            <div className="ui raised segment">

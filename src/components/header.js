@@ -14,7 +14,8 @@ class Header extends React.Component{
         const projects =  this.props.language === 'english'?'Projects':'Projectos'
         const contacto =  this.props.language === 'english'?'Contact':'Contacto'
         const searchbar = this.props.menuBar === 'Images'  || this.props.menuBar === 'Videos' ? 
-        <SearchBar searchIng={this.props.searchIng} language={this.props.language} menuBar={this.props.menuBar}/>:null
+        <SearchBar searchIng={this.props.searchIng} language={this.props.language} menuBar={this.props.menuBar}
+        searchVideo = {this.props.searchVideo}/>:null
 
         const searchSomething = this.state.searchSomething=== false
 
@@ -33,6 +34,7 @@ class Header extends React.Component{
        <div className="mobileHeader navbar fixed-top navbar-light bg-light justify-content-between">
        <SearchBar 
              searchIng ={this.props.searchIng} 
+             searchVideo = {this.props.searchVideo}
             language={this.props.language}
             menuBar={this.props.menuBar}
             searchicon ={this.searchicon}

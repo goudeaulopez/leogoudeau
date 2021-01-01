@@ -12,6 +12,7 @@ import Validations from './validations'
 
 import unsplash from '../apis/unplash'
 import ImageDisplay from './imageDisplay'
+import youtube from '../apis/youtube'
 
 class App extends React.Component{
     state={
@@ -19,14 +20,15 @@ class App extends React.Component{
             menuBar:'',
             menuMobile:false,
             messageSent:false,
-            //images component
             imageList:[],
-            //
-            selected:null
+            selected:null,
+            videoList:[],
+            selectedVideo:null
 
         }
     componentDidMount(){
       this.searchIng('colombia')
+      this.searchVideo('colombia')
     }
     changeLanguage = language => {
         this.setState({language})
@@ -54,7 +56,18 @@ class App extends React.Component{
       console.log(response.data.results)
       this.setState({imageList:response.data.results})
     }
-  
+    searchVideo = async search => {
+        const response = await youtube.get(
+            '/search',{
+                params:{
+                    q: search
+                }
+            }
+        )
+        this.setState({videoList:response.data.items, selectedVideo: response.data.items[0]})
+        console.log(this.state.videoList)
+    }
+  //,onSelected:response.data.items[0]
 
     menuNavigation = () => {
         switch(this.state.menuBar){
@@ -63,7 +76,11 @@ class App extends React.Component{
             case 'Weather':
                 return <Weather language={this.state.language}/>
             case 'Videos':
-                return <Videos language={this.state.language}/>
+                return <Videos 
+                          language={this.state.language}
+                          onListVideos={this.state.videoList}
+                          selectedVideo={this.state.selectedVideo}
+                        />
             case 'Images':
                 return <Images 
                             onSelected = {this.onSelected}
@@ -97,6 +114,7 @@ class App extends React.Component{
                         selectMenuBar={this.selectMenuBar} 
                         menuBar={this.state.menuBar}
                         searchIng={this.searchIng}
+                        searchVideo={this.searchVideo}
                     />
                     
                     {this.menuNavigation()}
@@ -111,6 +129,7 @@ class App extends React.Component{
                       menuMobile={this.state.menuMobile}
                       selectMenuMobile={this.selectMenuMobile}
                       searchIng={this.searchIng}
+                      searchVideo={this.searchVideo}
                     />
                     {
                         this.state.menuMobile === false ?
@@ -124,6 +143,3 @@ class App extends React.Component{
 }
 export default App
 
-
-//apiKey: AIzaSyDJO9HJTdxX9EheybZQMIo567MhFt4onc4
-//<i class="youtube icon"></i>
