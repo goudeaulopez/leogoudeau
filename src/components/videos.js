@@ -7,7 +7,7 @@ const Videos = props => {
     return(
         <div className='videosDisplay'>
             <VideoDisplay selectedVideo={props.selectedVideo}/>
-            <VideoList listVideos={props.onListVideos}/>
+            <VideoList listVideos={props.onListVideos} selectingVideo={props.selectingVideo}/>
         </div>
     )
 }
