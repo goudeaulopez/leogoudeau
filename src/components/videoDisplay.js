@@ -13,8 +13,8 @@ const VideoDisplay = props => {
                  <iframe id="iframe"title="video" src={videoSrc}/>
             </div>
             <div>
-              <h4>{props.selectedVideo.snippet.title}</h4>
-              <p>{props.selectedVideo.snippet.description}</p>
+              <h5 style={{textAlign:'center',paddingLeft:'10px'}}>{props.selectedVideo.snippet.title}</h5>
+              <p style={{paddingLeft:'20px'}}>{props.selectedVideo.snippet.description}</p>
             </div>
         </div>
     )

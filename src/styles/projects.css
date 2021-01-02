@@ -23,10 +23,11 @@
         margin-right: 20%;
         margin-top: 7%;
    }
+   .projects #firstseg{
+       display: flex;
+   }
    #title{
        padding-left: 10px;
    }
-   #btndesktop{
-       margin-bottom: 10px;
-   }
+ 
   }
