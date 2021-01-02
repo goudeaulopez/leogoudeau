@@ -45,29 +45,29 @@ class Header extends React.Component{
 //#263029
        return(
             <div>
-                <div className="desktopHeader navbar fixed-top navbar-light mb-0" style={{backgroundColor:'#92a832'}}>
-                     <a style={{color:'#a89e32'}}  className="title navbar-brand pt-2 pl-2">MyResume</a>
+                <div className="desktopHeader navbar fixed-top navbar-light bg-light mb-0">
+                     <a style={{color:'#263029'}}  className="title navbar-brand pt-2 pl-2">MyResume</a>
                      <ul className="navbar-nav mr-auto d-flex flex-row ml-3">
                           <li className="nav-item ml-2">
                              <p onClick={()=>{this.props.selectMenuBar('')}}  
-                                className="nav-link pt-2" style={{color:'#a89e32'}} >
+                                className="nav-link pt-2" style={{color:'#263029'}} >
                                  {mainPage}
                             </p>
                           </li>
                           <li className="nav-item ml-2">
                             <p onClick={()=>this.props.selectMenuBar('Education')}
-                               className="nav-link pt-2" style={{color:'#a89e32'}}>
+                               className="nav-link pt-2" style={{color:'#263029'}}>
                             {education}
                             </p>
                          </li>
                          
                         <li className="nav-item ml-2">
                           <p  onClick={()=>this.props.selectMenuBar('Projects')} 
-                             className="nav-link pt-2" style={{color:'#a89e32'}}>{projects}</p>
+                             className="nav-link pt-2" style={{color:'#263029'}}>{projects}</p>
                         </li>
                         <li className="nav-item ml-2">
                            <p onClick={()=>this.props.selectMenuBar('Contact')} 
-                           className="nav-link pt-2" style={{color:'#a89e32'}}>{contacto}</p>
+                           className="nav-link pt-2" style={{color:'#263029'}}>{contacto}</p>
                        </li>
                         <li className="nav-item ml-3" >
                            {searchbar}
@@ -145,8 +145,8 @@ const SearchIcon = props => {
 
 
     return(
-        <div className="mobileHeader navbar fixed-top navbar-light  justify-content-between" style={{backgroundColor:'#92a832'}}>
-             <a  style={{fontSize:'18px',fontWeight:'bold',color:'#a89e32'}} className="title navbar-brand pt-2 pl-1">
+        <div className="mobileHeader navbar fixed-top navbar-light bg-light  justify-content-between" >
+             <a  style={{fontSize:'18px',fontWeight:'bold',color:'#263029'}} className="title navbar-brand pt-2 pl-1">
                      <Title language={props.language} menuBar={props.menuBar}/>
             </a>
            <div>
