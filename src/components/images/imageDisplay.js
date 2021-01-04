@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/imageDisplay.css'
+import '../../styles/imageDisplay.css'
 
 const ImageDisplay = props => {
    const displayButton = props.language === 'english'? 'back to list' : 'volver a imagenes'

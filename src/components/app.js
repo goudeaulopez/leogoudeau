@@ -4,14 +4,14 @@ import Education from './education'
 import Projects from './projects'
 import Contact from './contact'
 import MainPage from './mainPage'
-import Images from './images'
-import Videos from './videos'
+import Images from './images/images'
+import Videos from './videos/videos'
 import Weather from './weather'
 import '../styles/app.css'
 import Validations1 from './validation1/validations1'
 
 import unsplash from '../apis/unplash'
-import ImageDisplay from './imageDisplay'
+import ImageDisplay from './images/imageDisplay'
 import youtube from '../apis/youtube'
 
 class App extends React.Component{

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/videoDisplay.css'
+import '../../styles/videoDisplay.css'
 
 const VideoDisplay = props => {
     if(!props.selectedVideo){
