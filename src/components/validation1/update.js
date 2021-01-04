@@ -5,13 +5,20 @@ import '../../styles/create.css'
 
 class Update extends React.Component{
     render(){
+        const create = this.props.language === 'english'? 'Edit':
+        'Editar'
+        const title = this.props.language === 'english'? 'Update Record':
+        'Editar Registro'
+
+        const backtolist = this.props.language === 'english'? 'Back to list':'Volver a lista'
+
     return(
         <div className="create">
             <p  onClick={()=>this.props.onOption('')}>
-                     Back to list
+                     {backtolist}
                 </p>
            <SimpleForm initialValues={_.pick(this.props.selected,'firstname','lastname','phone','email','description')}
-                       onList={this.props.onList} create="Update" title="Update Record"
+                       onList={this.props.onList} create={create} title={title}
            />
         </div>
     )

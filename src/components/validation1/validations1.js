@@ -36,16 +36,16 @@ onDelete = (selected,option)=>{
     renderOption = () =>{
     
         if(this.state.option === 'create'){
-            return <Create onList={this.onList} onCheck={this.state.list} onOption={this.onOption}/>
+            return <Create language={this.props.language} onList={this.onList} onCheck={this.state.list} onOption={this.onOption}/>
         }else if(this.state.option === 'update'){
-            return <Update selected={this.state.selected} onList={this.onUpdate} onOption={this.onOption}/>
+            return <Update language={this.props.language} selected={this.state.selected} onList={this.onUpdate} onOption={this.onOption}/>
         }else if(this.state.option === 'details'){
-            return <Details onOption={this.onOption} selected={this.state.selected} onSelected={this.onSelected} onDelete={this.onDelete}/>
+            return <Details language={this.props.language} onOption={this.onOption} selected={this.state.selected} onSelected={this.onSelected} onDelete={this.onDelete}/>
         }else if(this.state.option === 'delete'){
-            return <Delete onDelete={this.onDelete} selected={this.state.selected} onSelected={this.onSelected}/>
+            return <Delete language={this.props.language} onDelete={this.onDelete} selected={this.state.selected} onSelected={this.onSelected}/>
         }
         else{
-            return <List onOption={this.onOption} displayList={this.state.list} onSelected={this.onSelected}/>
+            return <List language={this.props.language} onOption={this.onOption} displayList={this.state.list} onSelected={this.onSelected}/>
         }
     }
      render(){

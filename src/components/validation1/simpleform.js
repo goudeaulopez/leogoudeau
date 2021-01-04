@@ -55,7 +55,16 @@ class SimpleForm  extends React.Component{
        this.props.onList(formvalue);
     }
     render(){
-       
+       const firstname = this.props.language === 'english'? 'FirstName':'Nombre'
+       const firstPH = this.props.language === 'english'? 'Enter your firstname':'Ingrese su nombre'
+       const lastname = this.props.language === 'english'? 'LastName':'Apellido'
+       const lastPH = this.props.language === 'english'? 'Enter your lastname':'Ingrese su apellido'
+       const mobile = this.props.language === 'english'? 'Mobile Number':'Numero telefonico'
+       const mobileph = this.props.language === 'english'? 'Enter your mobile':'Ingrese su mobile'
+       const email = this.props.language === 'english'? 'EmailAddress':'Correo electronico'
+       const emailph = this.props.language === 'english'? 'Enter your email':'Ingrese su email'
+       const about = this.props.language === 'english'? 'About you':'Acerca de ti'
+       const aboutph = this.props.language === 'english'? 'Please say something':'Porfavor diga algo'
         return(
             <div className="simpleform">
                 
@@ -65,15 +74,15 @@ class SimpleForm  extends React.Component{
                    
                     <Field
                         name="firstname"
-                        label="FirstName"
-                        placeholder=" Enter your firstname"
+                        label={firstname}
+                        placeholder={firstPH}
                         component={this.inputname}
                        
                     />
                     <Field
                         name="lastname"
-                        label="LastName"
-                        placeholder=" Enter your lastname"
+                        label={lastname}
+                        placeholder={lastPH}
                         component={this.inputname}
                         
                     />
@@ -81,23 +90,23 @@ class SimpleForm  extends React.Component{
                  <div className="two fields">
                     <Field
                        name="phone"
-                       label="Mobile Number"
-                       placeholder=" Enter your mobile number"
+                       label={mobile}
+                       placeholder={mobileph}
                        component={this.inputcontact}
                       
                     />
                     <Field
                       name="email"
-                      label="EmailAddress"
-                      placeholder=" Enter your lastname"
+                      label={email}
+                      placeholder={emailph}
                       component={this.inputcontact}
                     
                     />
                   </div>
                     <Field
                         name="description"
-                        label="About you"
-                        placeholder=" Please say Something"
+                        label={about}
+                        placeholder={aboutph}
                         component={this.inputdescription}
                        
                     />
