@@ -25,3 +25,6 @@ class Update extends React.Component{
     }
 }
 export default Update
+
+
+//const ServiceId = process.env.REACT_APP_ServiceId;
