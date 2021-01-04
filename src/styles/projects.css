@@ -4,6 +4,7 @@
      margin-left: 2%;
      margin-right: 2%;
      margin-top: 20%;
+     color: #6f7070;
    }
    #firstseg{
        margin-top: 30px;
@@ -12,7 +13,7 @@
        display: none;
    }
    .projects p{
-    color: #76857a;
+    color: #6f7070;
     font-family: "Times New Roman", Times, serif;
    }
   }
@@ -22,6 +23,7 @@
         margin-left: 20%;
         margin-right: 20%;
         margin-top: 7%;
+        color: #6f7070;
    }
    .projects #firstseg{
        display: flex;

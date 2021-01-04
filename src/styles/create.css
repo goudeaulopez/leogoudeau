@@ -1,0 +1,19 @@
+@media only screen and (max-width: 600px) {
+   .create{
+    padding-top: 10px;
+    margin-bottom: 10%;
+   }
+   .create p{
+       text-align: right;
+       padding-right: 5%;
+   }
+}
+@media only screen and (min-width: 600px) {
+.create{
+       padding-top: 1px;
+   }
+   .create p{
+    text-align: right;
+    padding-right: 5%;
+}
+}

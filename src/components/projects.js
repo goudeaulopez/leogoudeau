@@ -5,7 +5,7 @@ const Projects = props => {
     const testButtonLanguage = props.language === 'english'? 'try out' : 'ver demo'
     const Images = props.language === 'english'? 'Images ' : 'Imagenes'
     const Videos = props.language === 'english'? 'Videos' : 'Videos'
-    const Validations = props.language === 'english'? 'Validations':'Validaciones'
+    const Validations = props.language === 'english'? 'Validations 1':'Validaciones 1'
     const Weather = props.language === 'english' ? 'Weather':'Tiempo'
     const projects = props.language === 'english' ? 'Projects':'Projectos'
    
@@ -28,7 +28,15 @@ const Projects = props => {
                   style={{float:'right'}} className="mini ui button primary">{testButtonLanguage}</button>
                 
             </div>
-        </div>
+            <div  className="ui raised segment">
+            <i className="big th list icon ml-3 mr-3"></i>
+               {Validations}
+                <button 
+                  onClick={()=>props.selectMenuBar('Validations1')}
+                  style={{float:'right'}} className="mini ui button primary">{testButtonLanguage}</button>
+                
+            </div>
+        </div> 
     )
 }
 export default Projects
@@ -38,7 +46,14 @@ export default Projects
 /*
   <i className="big images icon ml-3 mr-1"></i>
                 <p>{Images}</p>
-
+<div  className="ui raised segment">
+            <i className="big youtube icon ml-3 mr-3"></i>
+               {Videos}
+                <button 
+                  onClick={()=>props.selectMenuBar('Videos')}
+                  style={{float:'right'}} className="mini ui button primary">{testButtonLanguage}</button>
+                
+            </div>
 
 
 <div className="projects"> 

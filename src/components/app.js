@@ -8,7 +8,7 @@ import Images from './images'
 import Videos from './videos'
 import Weather from './weather'
 import '../styles/app.css'
-import Validations from './validations'
+import Validations1 from './validation1/validations1'
 
 import unsplash from '../apis/unplash'
 import ImageDisplay from './imageDisplay'
@@ -93,8 +93,8 @@ class App extends React.Component{
                             language={this.state.language}/>
             case 'DisplayImage':
                 return <ImageDisplay selected={this.state.selected}  selectMenuBar={this.selectMenuBar} language={this.state.language} />
-            case 'Validations':
-                return <Validations language={this.state.language}/>
+            case 'Validations1':
+                return <Validations1 language={this.state.language}/>
             case 'Projects':
                 return <Projects language={this.state.language} selectMenuBar={this.selectMenuBar}/>
             case 'Contact':
