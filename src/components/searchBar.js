@@ -37,7 +37,7 @@ class SearchBar extends React.Component{
                     <form  onSubmit={this.onSubmit}  >
                         <i onClick={()=>this.props.searchicon(false)} className="arrow left icon"></i>
                         <input  value={this.state.search} onChange={this.onChange} placeholder={placeholder} />
-                        <button  type="submit">search</button>
+                        <button onClick={()=>this.props.searchicon(false)}  type="submit">search</button>
                        
                     </form>
                    
