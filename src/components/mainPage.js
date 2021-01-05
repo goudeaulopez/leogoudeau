@@ -25,7 +25,8 @@ const Inicio = () => {
         <div className="mainpage" >
         <h3>Leonardo Goudeau</h3>
         <h5>Front-End Developer</h5>
-        <br/>
+        <a href="https://github.com/goudeaulopez/leogoudeau" target="_blank" className="mini ui button ml-3">Codigo fuente<i class="github icon ml-2"></i></a>
+        <br/><br/>
         <p>
          Yo comenze mi viaje en programacion hace 3 años, despues de haber estado en diferentes industrias desde
          que termine la universidad en Chile
@@ -53,7 +54,8 @@ const Main = () => {
           <div className="mainpage" >
                   <h3>Leonardo Goudeau</h3>
                   <h5>Front-End Developer</h5>
-                  <br/>
+                  <a href="https://github.com/goudeaulopez/leogoudeau"  target="_blank" className="mini ui button ml-3">source code <i class="github icon ml-2"></i></a>
+                  <br/><br/>
                   <p>
                   I began my coding journey about 3 years ago after being in different industries 
                   since I finished Univesity back in Chile.
