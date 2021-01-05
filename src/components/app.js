@@ -57,7 +57,7 @@ class App extends React.Component{
         }
       )
       console.log(response.data.results)
-      this.setState({imageList:response.data.results,menuBar:'Images'})
+      this.setState({imageList:response.data.results})
     }
     searchVideo = async search => {
         const response = await youtube.get(
@@ -67,7 +67,7 @@ class App extends React.Component{
                 }
             }
         )
-        this.setState({videoList:response.data.items, selectedVideo: response.data.items[0],menuBar:'Videos'})
+        this.setState({videoList:response.data.items, selectedVideo: response.data.items[0]})
         console.log(this.state.videoList)
     }
   //,onSelected:response.data.items[0]
