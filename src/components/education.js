@@ -90,7 +90,7 @@ const AboutSpanish = () => {
                 <p>Aws</p>
               </div>
               <div className="ui segment">
-                <p>Azure</p>
+                <p>JQuery</p>
               </div>
             </div>
             <div className="ui horizontal segments">
