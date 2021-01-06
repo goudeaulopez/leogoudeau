@@ -27,17 +27,23 @@ class Form3 extends React.Component{
         )
     }
     render(){
+        const morningp = this.props.language === 'english'?'Morning':'Mañana'
+        const afternoonp = this.props.language === 'english'?'Afternoon':'Tarde'
+        const nochep = this.props.language === 'english'?'Evening':'Noche'
+        const next = this.props.language === 'english'?'Next':'Siguiente'
+        const previos = this.props.language === 'english'?'Previos':'Anterior'
+        const timetomeet = this.props.language === 'english'?'Select your best time to meet:':'Selecciona el tiempo del dia para juntar'
         return(
             <div className="form1">
                 <form className="ui from" onSubmit={this.props.handleSubmit}>
                     <div className="grouped fields">
-                    <h4 >Select your best time to meet:</h4>
-                    <Field name="appointment" component={this.RenderRadiosFields} label="Morning" value="morning"  type="radio"/>
-                    <Field name="appointment" component={this.RenderRadiosFields} label="Afternoon" value="afternoon"  type="radio"/>
-                    <Field name="appointment" component={this.RenderRadiosFields} label="Evening" value="evening"  type="radio"/>
+                    <h4 >{timetomeet}</h4>
+                    <Field name="appointment" component={this.RenderRadiosFields} label={morningp} value="morning"  type="radio"/>
+                    <Field name="appointment" component={this.RenderRadiosFields} label={afternoonp} value="afternoon"  type="radio"/>
+                    <Field name="appointment" component={this.RenderRadiosFields} label={nochep} value="evening"  type="radio"/>
                     
-                     <button className="btn btn-primary ml-2 mt-4" type="submit" onClick={()=>{this.props.previusPage()}}>previos</button>
-                     <button className="btn btn-primary ml-1 mr-1 mt-4" type="submit">next</button>
+                     <button className="btn btn-primary ml-2 mt-4" type="submit" onClick={()=>{this.props.previusPage()}}>{previos}</button>
+                     <button className="btn btn-primary ml-1 mr-1 mt-4" type="submit">{next}</button>
                      </div>
                 </form>
             </div>

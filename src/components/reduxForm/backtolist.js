@@ -1,6 +1,7 @@
 import React from 'react'
 
 const BackToList = props => {
-    return <a onClick={()=>props.onOption('')}>BackToList</a>
+    const backtolist = props.language === 'english'?'Back to list':'Volver a lista'
+    return <a onClick={()=>props.onOption('')}>{backtolist}</a>
 }
 export default BackToList

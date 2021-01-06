@@ -7,6 +7,7 @@ class UpdateReduxForm extends React.Component{
      return(
         <div>
         <Form 
+            language={this.props.language}
             onUpdate={this.props.onUpdate} 
             option={this.props.option} 
             update = {this.props.update}

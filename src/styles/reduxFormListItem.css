@@ -1,24 +1,19 @@
 @media only screen and (min-width: 600px) {
-    #listitem{
-         display: none;
+   .reduxFormListItem{
+     width: 80%;
+     margin-left: 10%;
+     margin-right: 10%;
    }
-   #listitembs{
-       background-color: lightgrey;
-       border-bottom: 1px solid grey;
-   }
-   #listitembs:hover{
-       opacity: 0.2;
-     }
+    .reduxFormListItem #uiSegment{
+     display: flex;
+    }
    }
    @media only screen and (max-width: 600px) {
-   #listitem{
-        background-color: lightgrey;
-        border-bottom: 1px solid grey;
+   .reduxFormListItem #email{
+     display: none;
    }
-   #listitem:hover{
-     opacity: 0.2;
-   }
-   #listitembs{
-       display: none;
+   .reduxFormListItem #uiSegment{
+    display: flex;
+  
    }
    }

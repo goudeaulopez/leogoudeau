@@ -36,20 +36,22 @@ class ReduxForm extends React.Component{
     renderHelper(){
         switch(this.state.option){
             case 'create':
-                return <CreateReduxForm  onCreate={this.onCreate} option={this.state.option} />
+                return <CreateReduxForm language={this.props.language}  onCreate={this.onCreate} option={this.state.option} />
             case 'details':
-                return <DisplayReduxForm selected={this.state.selected} onOption={this.onOption}/>
+                return <DisplayReduxForm language={this.props.language} selected={this.state.selected} onOption={this.onOption}/>
             case 'update':
-                return <UpdateReduxForm update={this.state.selected} onUpdate={this.onUpdate} option={this.state.option}/>
+                return <UpdateReduxForm language={this.props.language} update={this.state.selected} onUpdate={this.onUpdate} option={this.state.option}/>
             case 'delete':
-                return <DeleteReduxform delete={this.state.selected} onDelete={this.onDelete} onOption={this.onOption}/>
+                return <DeleteReduxform language={this.props.language} delete={this.state.selected} onDelete={this.onDelete} onOption={this.onOption}/>
             default:
-                return <ReduxFormList displayList={this.state.list} onSelected={this.onSelected}/>
+                return <ReduxFormList language={this.props.language} displayList={this.state.list} onSelected={this.onSelected}/>
             
         }
     }
     render(){
-        const option = this.state.option === '' ? <AddRecord onOption={this.onOption}/> : <BackToList onOption={this.onOption}/>
+        const option = this.state.option === '' ? 
+        <AddRecord onOption={this.onOption} language={this.props.language}/> :
+         <BackToList language={this.props.language} onOption={this.onOption}/>
         //const content = this.state.option === '' ? <ReduxFormList/>:<Form/>
         return(
             <div>

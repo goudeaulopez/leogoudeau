@@ -17,27 +17,33 @@ renderError = values => {
 RenderDescription = values => {
     const classLabel = `${values.meta.error && values.meta.touched ? 'text text-danger': 'text text-grey'}` 
     const classInput = `${values.meta.error && values.meta.touched ? 'border border-danger':''}`
+    const What_is_your_story= this.props.language === 'english'?'What is your story':'Cual es tu historia'
     return(
         <div className="field">
-             <h4 className={classLabel}>What is your story</h4>
+             <h4 className={classLabel}>{What_is_your_story}</h4>
              <textarea className={classInput} {...values.input} placeholder={values.placeholder} />
              {this.renderError(values.meta)}
         </div>
     )
 }
 render(){
+        const enviar = this.props.language === 'english'?'Submit':'Enviar'
+        const previos = this.props.language === 'english'?'Previos':'Anterior'
+        const name = this.props.language === 'english'?'Description':'Descripcion'
+        const placeholder = this.props.language === 'english'?' Please say Something':'Porfavor diga algo'
+        
         return(
             <div className="form1">
                <form className="ui form" onSubmit={this.props.handleSubmit}>
                
                <Field
-                        name="description"
-                        placeholder=" Please say Something"
+                        name={name}
+                        placeholder={placeholder}
                         component={this.RenderDescription}
                        
                     />
-                   <button className="btn btn-primary ml-2 mt-4" type="submit" onClick={()=>{this.props.previusPage()}}>previos</button>
-                    <button className="btn btn-primary ml-1 mt-4" type="submit" onClick={reset}>submit</button>
+                   <button className="btn btn-primary ml-2 mt-4" type="submit" onClick={()=>{this.props.previusPage()}}>{previos}</button>
+                    <button className="btn btn-primary ml-1 mt-4" type="submit" onClick={reset}>{enviar}</button>
                </form>
             </div>
         )

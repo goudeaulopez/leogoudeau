@@ -24,15 +24,19 @@ class Form2 extends React.Component{
         )
     }
     render(){
+        const email = this.props.language === 'english'?'Email Address':'Correo Electronico'
+        const mobile = this.props.language === 'english'?'Mobile Number':'Numero de Contacto'
+        const next = this.props.language === 'english'?'Next':'Siguiente'
+        const previos = this.props.language === 'english'?'Previos':'Anterior'
         return(
             <div className="form1">
                <form className="ui form" onSubmit={this.props.handleSubmit}>
                <h4>{this.props.title}</h4>
-                  <Field name="email" component={this.RenderField} label="Email Address"/>
-                  <Field name="phone" component={this.RenderField} label="Mobile Number"/>
+                  <Field name="email" component={this.RenderField} label={email}/>
+                  <Field name="phone" component={this.RenderField} label={mobile}/>
                  
-                  <button className="btn btn-primary ml-1 mr-1" type="submit" onClick={()=>{this.props.previusPage()}}>previos</button>
-                  <button className="btn btn-primary ml-2 " type="submit">next</button>
+                  <button className="btn btn-primary ml-1 mr-1" type="submit" onClick={()=>{this.props.previusPage()}}>{previos}</button>
+                  <button className="btn btn-primary ml-2 " type="submit">{next}</button>
                </form>
             </div>
         )

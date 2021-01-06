@@ -1,6 +1,7 @@
 import React from 'react'
 
 const AddRecord = props =>{
-    return <a onClick={()=>props.onOption('create')}>Add Record</a>
+    const addRecord = props.language === 'english'?'Add Record':'Agregar campo'
+    return <a onClick={()=>props.onOption('create')}>{addRecord}</a>
 }
 export default AddRecord

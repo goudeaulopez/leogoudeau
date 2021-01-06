@@ -3,16 +3,22 @@ import ModalReduxform from './modalReduxform'
 
 class DeleteReduxform extends React.Component{
    renderContext(){
+       const message = this.props.language === 'english'?'Are you sure you want to delete this record':
+       'Estas Seguro que quieres eliminar este record'
+       const messageWithname = this.props.language === 'english'?'Are you sure you want to delete this record':
+       'Estas Seguro que quieres eliminar este record'
        if(!this.props.delete){
-        return 'Are you sure you want to delete this record'
+        return message
       }
-      return `Are you sure you want to delete this record ${this.props.delete.firstname}`
+      return `${messageWithname} ${this.props.delete.firstname}`
    }
    renderActions=()=>{
+    const Cancel = this.props.language === 'english'?'Cancel':'Cancelar'
+    const Delete = this.props.language === 'english'?'Delete':'Eliminar'
     return (
       <React.Fragment>
-          <button className="ui button negative" onClick={()=>{this.props.onDelete(this.props.delete)}} >Delete</button>
-          <button className="ui button" onClick={()=>this.props.onOption('details') } >Cancel</button>
+          <button className="ui button negative" onClick={()=>{this.props.onDelete(this.props.delete)}} >{Delete}</button>
+          <button className="ui button" onClick={()=>this.props.onOption('details') } >{Cancel}</button>
       </React.Fragment>
   )
   }
@@ -20,6 +26,7 @@ class DeleteReduxform extends React.Component{
         return (
                 <div>
                     <ModalReduxform
+                        language = {this.props.language}
                         onDismiss={()=>{this.props.onOption('details')}}
                         title="Delete Record"
                         context={this.renderContext()}

@@ -24,14 +24,17 @@ class Form1 extends React.Component{
         )
     }
     render(){
+        const firstnane = this.props.language === 'english'?'Firstname':'Nombre'
+        const Lastmname = this.props.language === 'english'?'Lastname':'Apellido'
+        const next = this.props.language === 'english'?'Next':'Siguiente'
         return(
             <div className="form1">
                 
                <form className="ui form" onSubmit={this.props.handleSubmit}>
                  <h4>{this.props.title}</h4>
-                 <Field name="firstname" component={this.RenderField} label="Firstname"/>
-                 <Field name="lastname" component={this.RenderField} label="Lastname"/>
-                 <button className="btn btn-primary" type="submit">next</button>
+                 <Field name="firstname" component={this.RenderField} label={firstnane}/>
+                 <Field name="lastname" component={this.RenderField} label={Lastmname}/>
+                 <button className="btn btn-primary" type="submit">{next}</button>
                </form>
             </div>
         )

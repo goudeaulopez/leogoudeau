@@ -30,16 +30,17 @@ class Form extends React.Component{
     }
     renderform(){
         var number = this.state.number
+        var contactInfo = this.props.language === 'english' ? 'Contact Info:': 'Informacion Personal:'
         switch(number){
             case 2: 
-                return <Form2  title="Contact Info:" onSubmit={this.nextPage} previusPage={this.previusPage}/>
+                return <Form2 language={this.props.language}  title={contactInfo} onSubmit={this.nextPage} previusPage={this.previusPage}/>
             case 3: 
-                return <Form3  onSubmit={this.nextPage} previusPage={this.previusPage} />
+                return <Form3 language={this.props.language}  onSubmit={this.nextPage} previusPage={this.previusPage} />
             case 4:
-                return <Form4  previusPage={this.previusPage} onSubmit={this.onSubmit}/>
+                return <Form4 language={this.props.language}  previusPage={this.previusPage} onSubmit={this.onSubmit}/>
             default:
-                return <Form1 
-                title="Personal Info:"
+                return <Form1  language={this.props.language}
+                title={contactInfo}
                 initialValues={_.pick(this.props.update,'firstname','lastname','email','phone','appointment','description','id')} 
                         onSubmit={this.nextPage} />
         }
