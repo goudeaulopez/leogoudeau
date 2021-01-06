@@ -41,7 +41,7 @@ class Form extends React.Component{
             default:
                 return <Form1  language={this.props.language}
                 title={contactInfo}
-                initialValues={_.pick(this.props.update,'firstname','lastname','email','phone','appointment','description','id')} 
+                initialValues={_.pick(this.props.update,'firstname','lastname','email','phone','appointment','Description','id')} 
                         onSubmit={this.nextPage} />
         }
     }
