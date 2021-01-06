@@ -4,7 +4,7 @@ import '../../styles/modalReduxform.css'
 
 const ModalReduxform = props =>{
     return  ReactDOM.createPortal(
-        <div onClick={props.onDismiss} className="ui dimmer modals visible active">
+        <div onClick={props.onDismiss} >
             <div onClick={(e)=> e.stopPropagation()} className="ui tiny modal visible active" id="modal1">
                 <div className="header">{props.title}</div>
                 <div className="content">{props.context}</div>
