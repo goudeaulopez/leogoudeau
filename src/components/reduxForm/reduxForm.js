@@ -28,6 +28,11 @@ class ReduxForm extends React.Component{
     onSelected = selected => {
         this.setState({selected, option:'details'})
     }
+    onDelete = deletes=> {
+        var index = _.findIndex(arrayList,x=> x.id === deletes.id)
+        arrayList.splice(index,1)
+        this.setState({list:arrayList,option:''})
+    }
     renderHelper(){
         switch(this.state.option){
             case 'create':
@@ -37,7 +42,7 @@ class ReduxForm extends React.Component{
             case 'update':
                 return <UpdateReduxForm update={this.state.selected} onUpdate={this.onUpdate} option={this.state.option}/>
             case 'delete':
-                return <DeleteReduxform selected={this.state.selected} onOption={this.onOption}/>
+                return <DeleteReduxform delete={this.state.selected} onDelete={this.onDelete} onOption={this.onOption}/>
             default:
                 return <ReduxFormList displayList={this.state.list} onSelected={this.onSelected}/>
             

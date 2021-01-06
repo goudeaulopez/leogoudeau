@@ -15,11 +15,11 @@ renderError = values => {
 }
 
 RenderDescription = values => {
-    const classLabel = `${values.meta.error && values.meta.touched ? 'text text-danger': ''}` 
+    const classLabel = `${values.meta.error && values.meta.touched ? 'text text-danger': 'text text-grey'}` 
     const classInput = `${values.meta.error && values.meta.touched ? 'border border-danger':''}`
     return(
         <div className="field">
-             <h3 className={classLabel}>What is your story</h3>
+             <h4 className={classLabel}>What is your story</h4>
              <textarea className={classInput} {...values.input} placeholder={values.placeholder} />
              {this.renderError(values.meta)}
         </div>

@@ -14,7 +14,7 @@ class Form3 extends React.Component{
         }
     }
     RenderRadiosFields = values =>{
-        const classLabel = `${values.meta.error && values.meta.touched ? 'text text-danger': ''}` 
+        const classLabel = `${values.meta.error && values.meta.touched ? 'text text-danger': 'text text-secondary'}` 
      
          return(
            <div className="field">
@@ -31,7 +31,7 @@ class Form3 extends React.Component{
             <div className="form1">
                 <form className="ui from" onSubmit={this.props.handleSubmit}>
                     <div className="grouped fields">
-                    <h3 >Select your best time to meet:</h3>
+                    <h4 >Select your best time to meet:</h4>
                     <Field name="appointment" component={this.RenderRadiosFields} label="Morning" value="morning"  type="radio"/>
                     <Field name="appointment" component={this.RenderRadiosFields} label="Afternoon" value="afternoon"  type="radio"/>
                     <Field name="appointment" component={this.RenderRadiosFields} label="Evening" value="evening"  type="radio"/>

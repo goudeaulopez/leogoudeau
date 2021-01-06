@@ -13,8 +13,8 @@ class Form1 extends React.Component{
         }
     }
     RenderField = values => {
-        const classLabel = `${values.meta.error && values.meta.touched ? 'text text-danger': ''}` 
-        const classInput = `${values.meta.error && values.meta.touched ? 'border border-danger':''}`
+        const classLabel = `${values.meta.error && values.meta.touched ? 'text text-danger': 'text text-secondary'}` 
+        const classInput = `${values.meta.error && values.meta.touched ? 'border border-danger':'border border-secondary'}`
         return(
             <div className="field">
                <label className={classLabel}>{values.label}</label>
@@ -28,7 +28,7 @@ class Form1 extends React.Component{
             <div className="form1">
                 
                <form className="ui form" onSubmit={this.props.handleSubmit}>
-                 <h3>{this.props.title}</h3>
+                 <h4>{this.props.title}</h4>
                  <Field name="firstname" component={this.RenderField} label="Firstname"/>
                  <Field name="lastname" component={this.RenderField} label="Lastname"/>
                  <button className="btn btn-primary" type="submit">next</button>

@@ -13,9 +13,9 @@ class Form2 extends React.Component{
         }
     
     RenderField = values => {
-        const classLabel = `${values.meta.error && values.meta.touched ? 'text text-danger': ''}` 
-        const classInput = `${values.meta.error && values.meta.touched ? 'border border-danger':''}`
-        return(
+        const classLabel = `${values.meta.error && values.meta.touched ? 'text text-danger': 'text text-secondary'}` 
+        const classInput = `${values.meta.error && values.meta.touched ? 'border border-danger':'border border-secondary'}`
+       return(
             <div className="field">
                <label className={classLabel}>{values.label}</label>
                <input className={classInput} {...values.input}/>
@@ -27,7 +27,7 @@ class Form2 extends React.Component{
         return(
             <div className="form1">
                <form className="ui form" onSubmit={this.props.handleSubmit}>
-               <h3>{this.props.title}</h3>
+               <h4>{this.props.title}</h4>
                   <Field name="email" component={this.RenderField} label="Email Address"/>
                   <Field name="phone" component={this.RenderField} label="Mobile Number"/>
                  
