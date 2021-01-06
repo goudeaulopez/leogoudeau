@@ -13,6 +13,7 @@ import Validations1 from './validation1/validations1'
 import unsplash from '../apis/unplash'
 import ImageDisplay from './images/imageDisplay'
 import youtube from '../apis/youtube'
+import ReduxForm from './reduxForm/reduxForm'
 
 class App extends React.Component{
     state={
@@ -95,6 +96,8 @@ class App extends React.Component{
                 return <ImageDisplay selected={this.state.selected}  selectMenuBar={this.selectMenuBar} language={this.state.language} />
             case 'Validations1':
                 return <Validations1 language={this.state.language}/>
+            case 'ReduxForm':
+                    return <ReduxForm language={this.state.language}/>
             case 'Projects':
                 return <Projects language={this.state.language} selectMenuBar={this.selectMenuBar}/>
             case 'Contact':

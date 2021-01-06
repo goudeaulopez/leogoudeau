@@ -9,6 +9,7 @@ class Header extends React.Component{
    }
    render(){
         
+
         const mainPage = this.props.language === 'english'?'Home':'Inicio'
         const education =  this.props.language === 'english'?'Education':'Educacion'
         const projects =  this.props.language === 'english'?'Projects':'Projectos'
@@ -128,6 +129,8 @@ const Title = props => {
             return props.language === 'english'?'Weather':'Tiempo'
       case 'Contact':
           return props.language === 'english'?'Contact':'Contacto'
+      case 'ReduxForm':
+            return props.language === 'english'?'ReduxForm':'ReduxForm'
       default:
           return props.language === 'english'?'MyResume':'MyResume'
     }

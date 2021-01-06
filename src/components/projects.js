@@ -8,10 +8,18 @@ const Projects = props => {
     const Validations = props.language === 'english'? 'Validations 1':'Validaciones 1'
     const Weather = props.language === 'english' ? 'Weather':'Tiempo'
     const projects = props.language === 'english' ? 'Projects':'Projectos'
-   
+    
     return(
         <div className="projects" >
            <h4 id="title">{projects}</h4>
+           <div  className="ui raised segment">
+            <i className="big wpforms icon ml-3 mr-3"></i>
+               ReduxForm
+                <button 
+                  onClick={()=>props.selectMenuBar('ReduxForm')}
+                  style={{float:'right'}} className="mini ui button primary">{testButtonLanguage}</button>
+                
+            </div>
             <div  className="ui raised segment">
             <i className="big images icon ml-3 mr-3"></i>
                {Images}
@@ -36,6 +44,8 @@ const Projects = props => {
                   style={{float:'right'}} className="mini ui button primary">{testButtonLanguage}</button>
                 
             </div>
+
+           
         </div> 
     )
 }
