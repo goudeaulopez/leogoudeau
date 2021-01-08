@@ -14,14 +14,20 @@ class Header extends React.Component{
         const education =  this.props.language === 'english'?'Education':'Educacion'
         const projects =  this.props.language === 'english'?'Projects':'Projectos'
         const contacto =  this.props.language === 'english'?'Contact':'Contacto'
+
+        /*
         const searchbar = this.props.menuBar === 'Images'  || this.props.menuBar === 'Videos' ? 
         <SearchBar searchIng={this.props.searchIng} language={this.props.language} menuBar={this.props.menuBar}
         searchVideo = {this.props.searchVideo}/>:null
-
-        const searchSomething = this.state.searchSomething=== false
-
+        */
+       const searchbar = this.props.menuBar === 'Images'  || this.props.menuBar === 'Videos' || this.props.menuBar === 'Weather' ? 
+       <SearchBar searchIng={this.props.searchIng} language={this.props.language} menuBar={this.props.menuBar}
+       searchVideo = {this.props.searchVideo} searchCity ={this.props.searchCity}/>:null
         
-        ?
+       
+       
+       const searchSomething = this.state.searchSomething=== false
+       ?
         <SearchIcon 
             menuMobile={this.props.menuMobile} 
             menuBar={this.props.menuBar} 
@@ -36,9 +42,11 @@ class Header extends React.Component{
        <SearchBar 
              searchIng ={this.props.searchIng} 
              searchVideo = {this.props.searchVideo}
+             searchCity ={this.props.searchCity}
             language={this.props.language}
             menuBar={this.props.menuBar}
             searchicon ={this.searchicon}
+            
 
         />
    
@@ -131,6 +139,8 @@ const Title = props => {
           return props.language === 'english'?'Contact':'Contacto'
       case 'ReduxForm':
             return props.language === 'english'?'ReduxForm':'ReduxForm'
+      case 'Weather':
+            return props.language === 'english'?'Weather':'Tiempo'
       default:
           return props.language === 'english'?'MyResume':'MyResume'
     }
@@ -140,7 +150,8 @@ const Title = props => {
 const SearchIcon = props => {
     const menuMobile = !props.menuMobile
     console.log(menuMobile)
-    const searchicon = props.menuBar === 'Images' && menuMobile === true || props.menuBar === 'Videos' && menuMobile === true ? 
+    const searchicon = props.menuBar === 'Images' && menuMobile === true || props.menuBar === 'Videos' && menuMobile === true 
+    || props.menuBar === 'Weather' && menuMobile === true? 
     <i onClick={()=>{props.searchicon(true)}} className="search icon mt-1 ml-2 large"></i>:
     ''
     

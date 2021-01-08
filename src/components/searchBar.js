@@ -11,6 +11,9 @@ class SearchBar extends React.Component{
         if(this.props.menuBar === 'Videos'){
             this.props.searchVideo(this.state.search)
         }
+        else if(this.props.menuBar === 'Weather'){
+            this.props.searchCity(this.state.search)
+        }
         else{
             this.props.searchIng(this.state.search)
         }
@@ -21,14 +24,16 @@ class SearchBar extends React.Component{
     render(){
         const videos = this.props.language === 'english'? 'search for videos': 'busca un video'
         const images = this.props.language === 'english'? 'search for images': 'busca una imagen'
+        const city = this.props.language === 'english'? 'search for city': 'busca por ciudad'
         const placeholder = this.props.menuBar === 'Videos'? videos:images
+        const addingWeatherph = this.props.menuBar === 'Weather'? city : placeholder
 
         return(
             <div>
                <div className="desktopSearch">
                     <form  onSubmit={this.onSubmit}  >
                         <div className="ui small icon input">
-                        <input  value={this.state.search} onChange={this.onChange} placeholder={placeholder} />
+                        <input  value={this.state.search} onChange={this.onChange} placeholder={addingWeatherph} />
                         <i className="search icon" type="submit"></i>
                         </div>
                     </form>
@@ -36,7 +41,7 @@ class SearchBar extends React.Component{
                <div className="mobileSearch">
                     <form  onSubmit={this.onSubmit}  >
                         <i onClick={()=>this.props.searchicon(false)} className="arrow left icon"></i>
-                        <input  value={this.state.search} onChange={this.onChange} placeholder={placeholder} />
+                        <input  value={this.state.search} onChange={this.onChange} placeholder={addingWeatherph} />
                         <button onClick={()=>this.props.searchicon(false)}  type="submit">search</button>
                        
                     </form>

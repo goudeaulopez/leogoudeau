@@ -6,14 +6,15 @@ import Contact from './contact'
 import MainPage from './mainPage'
 import Images from './images/images'
 import Videos from './videos/videos'
-import Weather from './weather'
+import Weather from './weather/weather'
 import '../styles/app.css'
 import Validations1 from './validation1/validations1'
-
 import unsplash from '../apis/unplash'
 import ImageDisplay from './images/imageDisplay'
 import youtube from '../apis/youtube'
 import ReduxForm from './reduxForm/reduxForm'
+import axios from 'axios'
+
 
 class App extends React.Component{
     state={
@@ -24,13 +25,40 @@ class App extends React.Component{
             imageList:[],
             selected:null,
             videoList:[],
-            selectedVideo:null
+            selectedVideo:null,
+            city:'',
+            weather:[],
+            main:[],
+            cf:true
+
 
         }
     componentDidMount(){
+     window.navigator.geolocation.getCurrentPosition(
+         async position => {
+             var lat = position.coords.latitude
+             var lon = position.coords.longitude
+
+             let url = "http://api.openweathermap.org/data/2.5/"
+             let appi= "&appid=51e980823ae41cf16c725f5fb2103836"
+            // we get the current forecast with coordenates
+            let response = await axios.get(`${url}weather?lat=${lat}&lon=${lon+appi}`)
+            console.log(response.data)
+            this.setState({city:response.data.name,weather:response.data.weather,main:response.data.main})
+         }
+        
+     )
+    
       this.searchIng('colombia')
       this.searchVideo('salento colombia')
+     
     }
+
+    setCF = cf =>{
+        this.setState({cf})
+    }
+
+
     selectingVideo = selectedVideo => {
         this.setState({selectedVideo})
     }
@@ -60,6 +88,9 @@ class App extends React.Component{
       console.log(response.data.results)
       this.setState({imageList:response.data.results})
     }
+    searchCity = search => {
+        console.log(search)
+    }
     searchVideo = async search => {
         const response = await youtube.get(
             '/search',{
@@ -78,7 +109,14 @@ class App extends React.Component{
             case 'Education':
                 return <Education language={this.state.language}/>
             case 'Weather':
-                return <Weather language={this.state.language}/>
+                return <Weather 
+                        language={this.state.language}
+                        city ={this.state.city}
+                        weather={this.state.weather}
+                        main ={this.state.main}
+                        setCF={this.setCF}
+                        cf={this.state.cf}
+                        />
             case 'Videos':
                 return <Videos 
                           language={this.state.language}
@@ -122,6 +160,7 @@ class App extends React.Component{
                         menuBar={this.state.menuBar}
                         searchIng={this.searchIng}
                         searchVideo={this.searchVideo}
+                        searchCity={this.searchCity}
                     />
                     
                     {this.menuNavigation()}
@@ -137,6 +176,7 @@ class App extends React.Component{
                       selectMenuMobile={this.selectMenuMobile}
                       searchIng={this.searchIng}
                       searchVideo={this.searchVideo}
+                      searchCity={this.searchCity}
                     />
                     {
                         this.state.menuMobile === false ?

@@ -13,6 +13,14 @@ const Projects = props => {
         <div className="projects" >
            <h4 id="title">{projects}</h4>
            <div  className="ui raised segment">
+            <i className="big cloud icon ml-3 mr-3"></i>
+               {Weather}
+                <button 
+                  onClick={()=>props.selectMenuBar('Weather')}
+                  style={{float:'right'}} className="mini ui button primary">{testButtonLanguage}</button>
+                
+            </div>
+           <div  className="ui raised segment">
             <i className="big wpforms icon ml-3 mr-3"></i>
                ReduxForm
                 <button 
