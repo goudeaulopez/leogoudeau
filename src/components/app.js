@@ -39,7 +39,7 @@ class App extends React.Component{
              var lat = position.coords.latitude
              var lon = position.coords.longitude
 
-             let url = "http://api.openweathermap.org/data/2.5/"
+             let url = "https://api.openweathermap.org/data/2.5/"
              let appi= "&appid=51e980823ae41cf16c725f5fb2103836"
             // we get the current forecast with coordenates
             let response = await axios.get(`${url}weather?lat=${lat}&lon=${lon+appi}`)

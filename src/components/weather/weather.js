@@ -33,7 +33,7 @@ const Weather = props => {
                 return 'Cloudy'
         }
     }
-    var icon = `http://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`
+    var icon = `https://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`
 
     const temp = props.cf ? Math.round(props.main.temp -273.15) : props.main.temp
     var pmoram= date.getHours() > 11 ? 'pm' : 'am'
