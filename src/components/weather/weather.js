@@ -33,7 +33,7 @@ const Weather = props => {
                 return 'Cloudy'
         }
     }
-    var icon = `https://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`
+  // var icon = `https://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`
 
     const temp = props.cf ? Math.round(props.main.temp -273.15) : props.main.temp
     var pmoram= date.getHours() > 11 ? 'pm' : 'am'
@@ -43,8 +43,7 @@ const Weather = props => {
             <p>{displayDay() +' '+ time+' '+pmoram}</p>
             <p>  {description()}</p>
              <div style={{display:'flex'}}>
-             <img src={icon} alt={props.weather[0].description} style={{fontSize:'24px', width:'50px',height:'50px',marginRight:'10px'}}/>
-             <h3>{temp}</h3>
+            <h3>{temp}</h3>
              <a className="ml-2" onClick={()=>props.setCF(true)}>C</a> | <a onClick={()=>props.setCF(false)}>F</a>
              </div>
              
@@ -57,3 +56,5 @@ const Weather = props => {
 }
 export default Weather
 
+// <img src={icon} alt={props.weather[0].description} style={{fontSize:'24px', width:'50px',height:'50px',marginRight:'10px'}}/>
+             
