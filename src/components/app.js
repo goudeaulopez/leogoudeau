@@ -26,10 +26,9 @@ class App extends React.Component{
             selected:null,
             videoList:[],
             selectedVideo:null,
-            city:'',
-            weather:[],
-            main:[],
-            cf:true
+            currentWeather:[],
+            weeklyWeather:[]
+           
 
 
         }
@@ -42,9 +41,10 @@ class App extends React.Component{
              let url = "https://api.openweathermap.org/data/2.5/"
              let appi= "&appid=51e980823ae41cf16c725f5fb2103836"
             // we get the current forecast with coordenates
-            let response = await axios.get(`${url}weather?lat=${lat}&lon=${lon+appi}`)
-            console.log(response.data)
-            this.setState({city:response.data.name,weather:response.data.weather,main:response.data.main})
+            let currentWeather = await axios.get(`${url}weather?lat=${lat}&lon=${lon+appi}`)
+            let weeklyWeather = await axios.get(`${url}forecast?lat=${lat}&lon=${lon+appi}`)
+            this.setState({currentWeather:currentWeather.data,weeklyWeather:weeklyWeather.data})
+
          }
         
      )
@@ -53,12 +53,6 @@ class App extends React.Component{
       this.searchVideo('salento colombia')
      
     }
-
-    setCF = cf =>{
-        this.setState({cf})
-    }
-
-
     selectingVideo = selectedVideo => {
         this.setState({selectedVideo})
     }
@@ -111,11 +105,8 @@ class App extends React.Component{
             case 'Weather':
                 return <Weather 
                         language={this.state.language}
-                        city ={this.state.city}
-                        weather={this.state.weather}
-                        main ={this.state.main}
-                        setCF={this.setCF}
-                        cf={this.state.cf}
+                        weeklyWeather={this.state.weeklyWeather}
+                        currentWeather={this.state.currentWeather}
                         />
             case 'Videos':
                 return <Videos 

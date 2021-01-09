@@ -1,7 +1,20 @@
 import React from 'react'
 import '../../styles/weather.css'
+import CurrentWeather from './currentWeather'
+import WeeklyWeather from './weeklyWeather'
 
 const Weather = props => {
+   return(
+       <div className="theweather">
+         <CurrentWeather currentWeather={props.currentWeather}/>
+         <WeeklyWeather weeklyWeather={props.weeklyWeather}/>
+       </div>
+   )
+}
+export default Weather
+
+// <img src={icon} alt={props.weather[0].description} style={{fontSize:'24px', width:'50px',height:'50px',marginRight:'10px'}}/>
+/*
     var date = new Date();
     var day = date.getDay()
     var displayDay = () => {
@@ -53,8 +66,7 @@ const Weather = props => {
            
         </div>
     )
-}
-export default Weather
 
-// <img src={icon} alt={props.weather[0].description} style={{fontSize:'24px', width:'50px',height:'50px',marginRight:'10px'}}/>
-             
+
+
+*/
