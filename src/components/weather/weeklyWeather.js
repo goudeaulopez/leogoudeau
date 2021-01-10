@@ -5,6 +5,7 @@ const WeeklyWeather = props => {
     return(
         <div>
           WeeklyWeather
+          <p style={{color:'red'}}>Still working on it</p>
         </div>
     )
 }

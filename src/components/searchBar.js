@@ -4,6 +4,7 @@ import '../styles/searchbar.css'
 class SearchBar extends React.Component{
     state={search:''}
     onChange= e => {
+        console.log(e.target.value)
         this.setState({search:e.target.value})
     }
     onSubmit = e => {
@@ -12,7 +13,7 @@ class SearchBar extends React.Component{
             this.props.searchVideo(this.state.search)
         }
         else if(this.props.menuBar === 'Weather'){
-            this.props.searchCity(this.state.search)
+            this.props.searchCity(this.state.search,this.props.searchicon(false))
         }
         else{
             this.props.searchIng(this.state.search)
@@ -20,7 +21,6 @@ class SearchBar extends React.Component{
          this.setState({search:''})
 
     }
-
     render(){
         const videos = this.props.language === 'english'? 'search for videos': 'busca un video'
         const images = this.props.language === 'english'? 'search for images': 'busca una imagen'
@@ -39,10 +39,12 @@ class SearchBar extends React.Component{
                     </form>
                </div>
                <div className="mobileSearch">
-                    <form  onSubmit={this.onSubmit}  >
-                        <i onClick={()=>this.props.searchicon(false)} className="arrow left icon"></i>
+                    <form  onSubmit={this.onSubmit} >
+                       <div >
+                       <i onClick={()=>this.props.searchicon(false)} className="arrow left icon"></i>
                         <input  value={this.state.search} onChange={this.onChange} placeholder={addingWeatherph} />
-                        <button onClick={()=>this.props.searchicon(false)}  type="submit">search</button>
+                        <button >search</button>
+                       </div>
                        
                     </form>
                    

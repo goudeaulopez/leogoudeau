@@ -45,6 +45,8 @@ const CurrentWeather = props => {
                 return 'Thunderstorm'
             case 'mist':
                 return 'Misty'
+            case 'haze':
+                return 'Haze'
             default:
                 return 'Snow'
 
