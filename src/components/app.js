@@ -53,6 +53,18 @@ class App extends React.Component{
       this.searchVideo('salento colombia')
      
     }
+    searchCity = async search => {
+        //api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
+        //api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+        let city = search
+        let url = "https://api.openweathermap.org/data/2.5/"
+        let appi= "&appid=51e980823ae41cf16c725f5fb2103836"
+
+            let currentWeather = await axios.get(`${url}weather?q=${city+appi}`)
+            let weeklyWeather = await axios.get(`${url}forecast?q=${city+appi}`)
+            this.setState({currentWeather:currentWeather.data,weeklyWeather:weeklyWeather.data})
+
+    }
     selectingVideo = selectedVideo => {
         this.setState({selectedVideo})
     }
@@ -81,9 +93,6 @@ class App extends React.Component{
       )
       console.log(response.data.results)
       this.setState({imageList:response.data.results})
-    }
-    searchCity = search => {
-        console.log(search)
     }
     searchVideo = async search => {
         const response = await youtube.get(

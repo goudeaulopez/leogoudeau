@@ -5,7 +5,7 @@ import WeeklyWeather from './weeklyWeather'
 
 const Weather = props => {
    return(
-       <div className="theweather">
+       <div className=" ui centered segment " id ="theweather">
          <CurrentWeather currentWeather={props.currentWeather}/>
          <WeeklyWeather weeklyWeather={props.weeklyWeather}/>
        </div>
