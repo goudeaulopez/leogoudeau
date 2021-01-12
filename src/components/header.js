@@ -21,7 +21,7 @@ class Header extends React.Component{
         searchVideo = {this.props.searchVideo}/>:null
         */
        const searchbar = this.props.menuBar === 'Images'  || this.props.menuBar === 'Videos' || this.props.menuBar === 'Weather' ? 
-       <SearchBar searchIng={this.props.searchIng} language={this.props.language} menuBar={this.props.menuBar}
+       <SearchBar searchIng={this.props.searchIng} language={this.props.language} menuBar={this.props.menuBar} searchicon ={this.searchicon}
        searchVideo = {this.props.searchVideo} searchCity ={this.props.searchCity}/>:null
         
        
@@ -172,5 +172,3 @@ const SearchIcon = props => {
        </div> 
     )
 }
-//style={{color:'#a89e32'}}
-//color:'#263029'

@@ -23,7 +23,6 @@ const CurrentWeather = props => {
             }
         }
     const time = date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-    //const time = new Date(props.currentWeather.dt.date)
     const pmoram= date.getHours() > 11 ? 'pm' : 'am'
     const icon =`https://openweathermap.org/img/wn/${props.currentWeather.weather[0].icon}@2x.png`
 
@@ -72,26 +71,4 @@ const CurrentWeather = props => {
     )
 }
 export default CurrentWeather
-/*
-<h2 class="ui sub header">   <h6 className="ui header"></h6>
-  Price    
-</h2> sub header
-<span>$10.99</span>    <img src={icon} alt="no image"/> 
-
-//<img src={icon} alt="no image"/>
-
-{displayDay() +' '+ time + ' '+pmoram} <br/>
-            {props.currentWeather.weather[0].main}
-
-
-<div class="ui clearing segment">
-  <h3 class="ui right floated header">
-    Go Forward
-  </h3>
-  <h3 class="ui left floated header">
-    Go Back
-  </h3>
-</div>
-
-*/
 

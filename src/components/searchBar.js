@@ -13,7 +13,7 @@ class SearchBar extends React.Component{
             this.props.searchVideo(this.state.search)
         }
         else if(this.props.menuBar === 'Weather'){
-            this.props.searchCity(this.state.search,this.props.searchicon(false))
+            this.props.searchCity(this.state.search)
         }
         else{
             this.props.searchIng(this.state.search)
@@ -21,6 +21,7 @@ class SearchBar extends React.Component{
          this.setState({search:''})
 
     }
+    //,this.props.searchicon(false)
     render(){
         const videos = this.props.language === 'english'? 'search for videos': 'busca un video'
         const images = this.props.language === 'english'? 'search for images': 'busca una imagen'
