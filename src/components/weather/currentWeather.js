@@ -2,6 +2,9 @@ import React from 'react'
 
 const CurrentWeather = props => {
     console.log(props.currentWeather)
+
+   
+
     const date = new Date();
     const day = date.getDay()
     const displayDay = () => {
@@ -53,23 +56,26 @@ const CurrentWeather = props => {
         }
         
     }
-    return(
-        <div  >
-           <h2 className="ui header">{props.currentWeather.name}
-           <div className="sub header">
-              {displayDay() +' '+ time + ' '+pmoram}<br/>
-              {displayCondition() }
-           </div>
-           </h2>
-           <h1 className="ui header">
-               <img src={icon} alt="image"/>
-               <div className="content">
-                 {Math.round(props.currentWeather.main.temp -273.15)}&#8451;
+
+        return(
+            <div  >
+               <h2 className="ui header">{props.currentWeather.name}
+               <div className="sub header">
+                  {displayDay() +' '+ time + ' '+pmoram}<br/>
+                  {displayCondition() }
                </div>
-            </h1>     
-           
-        </div>
-    )
+               </h2>
+               <h1 className="ui header">
+                   <img src={icon} alt="image"/>
+                   <div className="content">
+                     {Math.round(props.currentWeather.main.temp -273.15)}&#8451;
+                   </div>
+                </h1>     
+               
+            </div>
+        )
+   
+    
 }
 export default CurrentWeather
 

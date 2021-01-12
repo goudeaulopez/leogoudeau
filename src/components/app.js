@@ -116,7 +116,7 @@ class App extends React.Component{
             case 'Education':
                 return <Education language={this.state.language}/>
             case 'Weather':
-                return <Weather 
+                return  this.state.currentWeather.length===0?<CurrentBlock/>: <Weather 
                         language={this.state.language}
                         weeklyWeather={this.state.weeklyWeather}
                         currentWeather={this.state.currentWeather}
@@ -153,6 +153,7 @@ class App extends React.Component{
         }
     }
     render(){
+        console.log(this.state.currentWeather)
         return(
            <div>
                
@@ -193,4 +194,13 @@ class App extends React.Component{
     }
 }
 export default App
+
+
+const CurrentBlock = () => {
+    return(
+        <div style={{textAlign:'center', paddingTop:'15%'}}>
+            You have to allow current Location
+        </div>
+    )
+}
 
