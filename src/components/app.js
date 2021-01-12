@@ -28,10 +28,7 @@ class App extends React.Component{
             selectedVideo:null,
             currentWeather:[],
             weeklyWeather:[]
-           
-
-
-        }
+    }
     componentDidMount(){
      window.navigator.geolocation.getCurrentPosition(
          async position => {
@@ -44,12 +41,8 @@ class App extends React.Component{
                let currentWeather = await axios.get(`${url}weather?lat=${lat}&lon=${lon+appi}`)
                let weeklyWeather = await axios.get(`${url}forecast?lat=${lat}&lon=${lon+appi}`)
                this.setState({currentWeather:currentWeather.data,weeklyWeather:weeklyWeather.data})
-   
-            
-             
-         }
-        
-     )
+       }
+    )
     
       this.searchIng('colombia')
       this.searchVideo('salento colombia')
@@ -82,7 +75,6 @@ class App extends React.Component{
     setMessageSent = messageSent => {
         this.setState({messageSent})
     }
-    //search image
     onSelected = selected => {
         this.setState({selected,menuBar:'DisplayImage'})
     }
@@ -95,7 +87,6 @@ class App extends React.Component{
       )
       console.log(response.data.results)
       this.setState({imageList:response.data.results})
-      console.log('hola image')
     }
     searchVideo = async search => {
         const response = await youtube.get(

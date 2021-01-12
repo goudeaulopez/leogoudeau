@@ -1,11 +1,7 @@
 import React from 'react'
 
 const CurrentWeather = props => {
-    console.log(props.currentWeather)
-
-   
-
-    const date = new Date();
+   const date = new Date();
     const day = date.getDay()
     const displayDay = () => {
             switch(day){

@@ -4,7 +4,6 @@ import '../styles/searchbar.css'
 class SearchBar extends React.Component{
     state={search:''}
     onChange= e => {
-        console.log(e.target.value)
         this.setState({search:e.target.value})
     }
     onSubmit = e => {
@@ -19,9 +18,7 @@ class SearchBar extends React.Component{
             this.props.searchIng(this.state.search)
         }
          this.setState({search:''})
-
     }
-    //,this.props.searchicon(false)
     render(){
         const videos = this.props.language === 'english'? 'search for videos': 'busca un video'
         const images = this.props.language === 'english'? 'search for images': 'busca una imagen'
@@ -56,5 +53,3 @@ class SearchBar extends React.Component{
     }
 }
 export default SearchBar 
-//className="searchbar" style={{display:'flex'}}
-//<button style={{marginLeft:'4px', border:'none'}} type="submit"> </button>
