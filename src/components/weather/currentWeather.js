@@ -2,6 +2,9 @@ import React from 'react'
 
 const CurrentWeather = props => {
    const date = new Date();
+  // const date =new Date( now.getTime() - props.currentWeather.timezone)
+
+  //console.log(props.currentWeather.timezone)
     const day = date.getDay()
     const displayDay = () => {
             switch(day){
@@ -57,7 +60,7 @@ const CurrentWeather = props => {
             <div  >
                <h2 className="ui header">{props.currentWeather.name}
                <div className="sub header">
-                  {displayDay() +' '+ time + ' '+pmoram}<br/>
+               {displayDay() +' '+ time + ' '+pmoram}<br/>
                   {displayCondition() }
                </div>
                </h2>
@@ -74,4 +77,9 @@ const CurrentWeather = props => {
     
 }
 export default CurrentWeather
+
+
+
+
+
 

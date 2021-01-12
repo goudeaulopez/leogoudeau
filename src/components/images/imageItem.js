@@ -7,9 +7,11 @@ class ImageItem extends React.Component{
     this.imageRef.current.addEventListener('load', this.setSpans)
     }
     setSpans = () => {
-     
+    
      const height = this.imageRef.current.clientHeight;
-     
+      if(height===null){
+          height=1;
+      }
      const spans = Math.ceil(height / 10);
  
      this.setState({ spans });

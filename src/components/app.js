@@ -79,14 +79,14 @@ class App extends React.Component{
         this.setState({selected,menuBar:'DisplayImage'})
     }
     searchIng = async search => {
-      const response = await unsplash.get(
+     const response = await unsplash.get(
         '/search/photos',
         {
          params:{query:search}
         }
       )
-      console.log(response.data.results)
-      this.setState({imageList:response.data.results})
+     
+      this.setState({imageList:response.data.results})   
     }
     searchVideo = async search => {
         const response = await youtube.get(
