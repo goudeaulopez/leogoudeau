@@ -87,18 +87,18 @@ class App extends React.Component{
         this.setState({selected,menuBar:'DisplayImage'})
     }
     searchIng = async search => {
-    /*  const response = await unsplash.get(
+      const response = await unsplash.get(
         '/search/photos',
         {
          params:{query:search}
         }
       )
       console.log(response.data.results)
-      this.setState({imageList:response.data.results})*/
+      this.setState({imageList:response.data.results})
       console.log('hola image')
     }
     searchVideo = async search => {
-      /*  const response = await youtube.get(
+        const response = await youtube.get(
             '/search',{
                 params:{
                     q: search
@@ -106,10 +106,9 @@ class App extends React.Component{
             }
         )
         this.setState({videoList:response.data.items, selectedVideo: response.data.items[0]})
-        console.log(this.state.videoList) */
-        console.log('hola')
+        
     }
-  //,onSelected:response.data.items[0]
+ 
 
     menuNavigation = () => {
         switch(this.state.menuBar){
@@ -153,7 +152,6 @@ class App extends React.Component{
         }
     }
     render(){
-        console.log(this.state.currentWeather)
         return(
            <div>
                

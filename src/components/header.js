@@ -15,11 +15,6 @@ class Header extends React.Component{
         const projects =  this.props.language === 'english'?'Projects':'Projectos'
         const contacto =  this.props.language === 'english'?'Contact':'Contacto'
 
-        /*
-        const searchbar = this.props.menuBar === 'Images'  || this.props.menuBar === 'Videos' ? 
-        <SearchBar searchIng={this.props.searchIng} language={this.props.language} menuBar={this.props.menuBar}
-        searchVideo = {this.props.searchVideo}/>:null
-        */
        const searchbar = this.props.menuBar === 'Images'  || this.props.menuBar === 'Videos' || this.props.menuBar === 'Weather' ? 
        <SearchBar searchIng={this.props.searchIng} language={this.props.language} menuBar={this.props.menuBar} searchicon ={this.searchicon}
        searchVideo = {this.props.searchVideo} searchCity ={this.props.searchCity}/>:null
@@ -49,9 +44,8 @@ class Header extends React.Component{
             
 
         />
-   
-        </div>
-//#263029
+   </div>
+
        return(
             <div>
                 <div className="desktopHeader navbar fixed-top navbar-light bg-light mb-0">
@@ -149,7 +143,6 @@ const Title = props => {
 
 const SearchIcon = props => {
     const menuMobile = !props.menuMobile
-    console.log(menuMobile)
     const searchicon = props.menuBar === 'Images' && menuMobile === true || props.menuBar === 'Videos' && menuMobile === true 
     || props.menuBar === 'Weather' && menuMobile === true? 
     <i onClick={()=>{props.searchicon(true)}} className="search icon mt-1 ml-2 large"></i>:
