@@ -38,13 +38,15 @@ class App extends React.Component{
              var lat = position.coords.latitude
              var lon = position.coords.longitude
 
-             let url = "https://api.openweathermap.org/data/2.5/"
-             let appi= "&appid=51e980823ae41cf16c725f5fb2103836"
-            // we get the current forecast with coordenates
-            let currentWeather = await axios.get(`${url}weather?lat=${lat}&lon=${lon+appi}`)
-            let weeklyWeather = await axios.get(`${url}forecast?lat=${lat}&lon=${lon+appi}`)
-            this.setState({currentWeather:currentWeather.data,weeklyWeather:weeklyWeather.data})
-
+                let url = "https://api.openweathermap.org/data/2.5/"
+                let appi= "&appid=51e980823ae41cf16c725f5fb2103836"
+               // we get the current forecast with coordenates
+               let currentWeather = await axios.get(`${url}weather?lat=${lat}&lon=${lon+appi}`)
+               let weeklyWeather = await axios.get(`${url}forecast?lat=${lat}&lon=${lon+appi}`)
+               this.setState({currentWeather:currentWeather.data,weeklyWeather:weeklyWeather.data})
+   
+            
+             
          }
         
      )

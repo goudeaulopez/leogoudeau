@@ -24,7 +24,8 @@ const CurrentWeather = props => {
         }
     const time = date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
     const pmoram= date.getHours() > 11 ? 'pm' : 'am'
-    const icon =`https://openweathermap.org/img/wn/${props.currentWeather.weather[0].icon}@2x.png`
+    
+    const icon = `https://openweathermap.org/img/wn/${props.currentWeather.weather[0].icon}@2x.png`
 
     const displayCondition = () => {
         switch(props.currentWeather.weather[0].description){
