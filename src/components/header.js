@@ -3,10 +3,10 @@ import SearchBar from './searchBar'
 import '../styles/header.css'
 
 class Header extends React.Component{
-   state={searchSomething:false}
-   searchicon = searchSomething => {
-       this.setState({searchSomething})
-   }
+  // state={searchSomething:false}
+  // searchicon = searchSomething => {
+    //   this.setState({searchSomething})
+  // }
    render(){
         
 
@@ -21,7 +21,7 @@ class Header extends React.Component{
         
        
        
-       const searchSomething = this.state.searchSomething=== false
+       const searchSomething = this.props.searchSomething=== false
        ?
         <SearchIcon 
             menuMobile={this.props.menuMobile} 
@@ -29,8 +29,8 @@ class Header extends React.Component{
             language={this.props.language}
             changeLanguage={this.props.changeLanguage}
             selectMenuMobile={this.props.selectMenuMobile}
-            searchicon ={this.searchicon}
-            searchSomething = {this.state.searchSomething}
+            searchicon ={this.props.searchicon}
+            searchSomething = {this.props.searchSomething}
        />
        :
        <div className="mobileHeader navbar fixed-top navbar-light bg-light justify-content-between">
@@ -40,7 +40,7 @@ class Header extends React.Component{
              searchCity ={this.props.searchCity}
             language={this.props.language}
             menuBar={this.props.menuBar}
-            searchicon ={this.searchicon}
+            searchicon ={this.props.searchicon}
             
 
         />

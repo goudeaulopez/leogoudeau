@@ -27,7 +27,8 @@ class App extends React.Component{
             videoList:[],
             selectedVideo:null,
             currentWeather:[],
-            weeklyWeather:[]
+            weeklyWeather:[],
+            searchSomething:false
     }
     componentDidMount(){
      window.navigator.geolocation.getCurrentPosition(
@@ -48,6 +49,9 @@ class App extends React.Component{
       this.searchVideo('salento colombia')
      
     }
+    searchicon = searchSomething => {
+        this.setState({searchSomething})
+    }
     searchCity = async search => {
         //api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
         //api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
@@ -57,7 +61,7 @@ class App extends React.Component{
 
             let currentWeather = await axios.get(`${url}weather?q=${city+appi}`)
             let weeklyWeather = await axios.get(`${url}forecast?q=${city+appi}`)
-            this.setState({currentWeather:currentWeather.data,weeklyWeather:weeklyWeather.data})
+            this.setState({currentWeather:currentWeather.data,weeklyWeather:weeklyWeather.data,searchSomething:false})
 
     }
     selectingVideo = selectedVideo => {
@@ -79,25 +83,24 @@ class App extends React.Component{
         this.setState({selected,menuBar:'DisplayImage'})
     }
     searchIng = async search => {
-     const response = await unsplash.get(
+    const response = await unsplash.get(
         '/search/photos',
         {
          params:{query:search}
         }
       )
      
-      this.setState({imageList:response.data.results})   
+      this.setState({imageList:response.data.results,searchSomething:false})  
     }
     searchVideo = async search => {
-        const response = await youtube.get(
+       const response = await youtube.get(
             '/search',{
                 params:{
                     q: search
                 }
             }
         )
-        this.setState({videoList:response.data.items, selectedVideo: response.data.items[0]})
-        
+        this.setState({videoList:response.data.items, selectedVideo: response.data.items[0],searchSomething:false})
     }
  
 
@@ -155,6 +158,7 @@ class App extends React.Component{
                         searchIng={this.searchIng}
                         searchVideo={this.searchVideo}
                         searchCity={this.searchCity}
+                        
                     />
                     
                     {this.menuNavigation()}
@@ -171,6 +175,8 @@ class App extends React.Component{
                       searchIng={this.searchIng}
                       searchVideo={this.searchVideo}
                       searchCity={this.searchCity}
+                      searchicon ={this.searchicon}
+                      searchSomething={this.state.searchSomething}
                     />
                     {
                         this.state.menuMobile === false ?
